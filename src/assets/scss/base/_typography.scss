@@ -1,0 +1,22 @@
+@use "@scss/abstract/index";
+@use "fonts";
+@use "titles";
+
+html {
+	font-size: 16px;
+	@include index.minMedia(800px) {
+		font-size: index.$base-font-size;
+	}
+}
+
+body {
+	font-family: index.$text-font-stack;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: index.$base-line-height;
+	background-color: var(--color-theme-body);
+	color: var(--color-text-primary);
+	@include index.minMedia(550px) {
+		font-size: index.$base-font-size;
+	}
+}

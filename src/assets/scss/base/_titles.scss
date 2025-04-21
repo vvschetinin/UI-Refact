@@ -1,0 +1,12 @@
+@use "@scss/abstract/index";
+
+.h1-title {
+	font-size: 34px;
+	@include index.minMedia(550px) {
+		font-size: 2rem;
+		line-height: 1.15;
+	}
+	@media (max-height: 450px) and (orientation: landscape) {
+		font-size: 38px;
+	}
+}

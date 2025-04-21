@@ -1,0 +1,7 @@
+@use "@scss/abstract/index";
+
+section,
+.section {
+	position: relative;
+	z-index: 1;
+}
