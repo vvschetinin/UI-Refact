@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<link rel="icon" type="image/svg+xml" href="/assets/images/vite.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>UI Vite Sample</title>
-	</head>
-	<body>
-		<div class="container">
-			<div class="row no-gutters">
-				<div class="col-33 col-50--lg">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
-					dignissimos iste vitae dolorem alias atque voluptatem quaerat!
-					Architecto ipsam soluta minus aliquam.
-				</div>
-				<div class="col-33 col-50--lg">
-					<h2 class="h2-title">Lorem ipsum dolor sit</h2>
-					Maiores velit quae laboriosam itaque vel asperiores magni recusandae
-					accusantium dolor quidem, minus at veniam eveniet animi numquam in
-					aspernatur voluptates sint!
-				</div>
-			</div>
-		</div>
-		<script type="module" src="/src/main.ts"></script>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/assets/images/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UI Vite Sample</title>
+  </head>
+  <body>
+    <div class="site-wrapper">
+      <header class="header"></header>
+      <main class="site-content">
+        <section class="hero hero--large">
+          <figure class="hero-media">
+            <video preload="none" poster="https://tynepressuretesting.com/wp-content/themes/tpt/img/TPTPromoPoster.jpg" loop muted playsinline>
+              <source
+                data-src="https://player.vimeo.com/progressive_redirect/playback/708129476/rendition/1080p/file.mp4?loc=external&signature=353a0b1ffa04253934192e86115aae671686ae608ba1f845f929fc66cc85e8f6"
+                type="video/mp4"
+              />
+            </video>
+          </figure>
+
+          <div class="hero-container container--large">
+            <div class="hero-content">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores doloremque suscipit pariatur qui quaerat laborum officiis quibusdam earum? Eaque
+              similique nulla neque.
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer"></footer>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>
