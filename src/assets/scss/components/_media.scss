@@ -1,17 +1,17 @@
 @use "@scss/abstract/index";
 
 .hero-media {
-  padding: 0;
-  margin: 0;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  width: 100%;
   background-position: 50%;
   background-size: cover;
   background-repeat: no-repeat;
   transition: all 0.4s cubic-bezier(0.16, 0.43, 0, 1);
+  margin: 0;
   &:before {
     position: absolute;
     top: 0;

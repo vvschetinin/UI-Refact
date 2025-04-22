@@ -5,54 +5,93 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-theme-hero);
-  color: var(--color-text-white);
-  min-height: 50px;
+  background-color: #050029;
+  color: #fff;
   @include index.minMedia(800px) {
     overflow: hidden;
   }
-  &--large {
-    max-height: 980px;
-    max-height: 61.25rem;
-    @include index.minMedia(800px) {
-      height: 120vh;
-      min-height: 980px;
-      min-height: 61.25rem;
-      max-height: calc(1400px - 20vh);
-    }
+}
+
+.hero--large {
+  min-height: 100vh;
+  max-height: 980px;
+  max-height: 61.25rem;
+  @include index.minMedia(550px) {
+    height: 120vh;
+    min-height: 980px;
+    min-height: 61.25rem;
+  }
+  @include index.minMedia(800px) {
+    max-height: calc(1400px - 20vh);
   }
 }
 
 .hero-container {
-  position: relative;
+  width: 100%;
   display: flex;
   align-items: center;
-  width: 100%;
-  max-width: 1920px;
-  max-width: 120rem;
+  justify-content: center;
   margin: 0;
-  z-index: 10;
-}
-
-.container--large {
   padding: 0 20px;
   padding: 0 1.25rem;
   @include index.minMedia(800px) {
-    padding: 0;
-    padding: 0 100px;
-    padding: 0 6.25rem;
+    justify-content: flex-start;
+    padding: 0 60px;
+    padding: 0 3.75rem;
   }
   @include index.minMedia(1100px) {
-    max-width: 1680px;
-    max-width: 105rem;
+    justify-content: flex-start;
+    max-width: 1920px;
+    max-width: 120rem;
+    padding: 0 100px;
+    padding: 0 6.25rem;
   }
 }
 
 .hero-content {
   position: relative;
   width: 100%;
-  max-width: 1000px;
-  max-width: 62.5rem;
-  z-index: 2;
+  text-align: center;
   color: #fff;
+  z-index: 2;
+  @include index.minMedia(800px) {
+    max-width: 45.052vw;
+    min-width: 600px;
+    min-width: 37.5rem;
+    text-align: left;
+  }
+  @include index.minMedia(1100px) {
+    max-width: 45.052vw;
+    min-width: 600px;
+    min-width: 37.5rem;
+  }
+  .hero-text {
+    margin-bottom: 50px;
+    margin-bottom: 3.125rem;
+    &:last-child {
+      margin: 0;
+    }
+  }
+  p {
+    line-height: 1.43;
+    margin-bottom: 50px;
+    margin-bottom: 3.125rem;
+    font-size: 24px;
+    font-size: 1.5rem;
+    @include index.minMedia(800px) {
+      font-size: calc(24px + 0 * ((100vw - 600px) / 1080));
+    }
+    &:last-child {
+      margin: 0;
+    }
+  }
+  a {
+    &:not([class]) {
+      color: #1cd4bd;
+      text-decoration: none;
+    }
+    &:not([class]):hover {
+      opacity: 0.75;
+    }
+  }
 }

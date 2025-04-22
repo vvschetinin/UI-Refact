@@ -3,22 +3,35 @@
 @use "titles";
 
 html {
-	font-size: 16px;
-	scroll-behavior: smooth;
-	scroll-padding: 200px;
-	@include index.minMedia(800px) {
-		font-size: index.$base-font-size;
-	}
+  font-size: 16px;
+  scroll-behavior: smooth;
+  scroll-padding: 200px;
+  @include index.minMedia(800px) {
+    font-size: index.$base-font-size;
+  }
 }
 
 body {
-	font-family: index.$text-font-stack;
-	font-size: 16px;
-	font-weight: 400;
-	line-height: index.$base-line-height;
-	background-color: var(--color-theme-body);
-	color: var(--color-text-primary);
-	@include index.minMedia(550px) {
-		font-size: index.$base-font-size;
-	}
+  font-family: index.$text-font-stack;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: index.$base-line-height;
+  background-color: var(--color-theme-body);
+  color: var(--color-text-primary);
+  @include index.minMedia(550px) {
+    font-size: index.$base-font-size;
+  }
+}
+
+// ====================== HERO =========================
+
+.hero-title {
+  font-family: din-2014, sans-serif;
+  font-weight: 700;
+  line-height: 110%;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  margin-bottom: 1.875rem;
+  font-size: 40px;
+  font-size: 2.5rem;
 }
