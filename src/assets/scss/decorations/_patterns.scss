@@ -1,0 +1,19 @@
+@use "@scss/abstract/index";
+
+.hero-pattern {
+  position: absolute;
+  content: "";
+  bottom: -1px;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  &--large {
+    height: 100%;
+    width: 100%;
+    max-height: 18.333vw;
+  }
+  svg {
+    height: 100%;
+    width: 100%;
+  }
+}

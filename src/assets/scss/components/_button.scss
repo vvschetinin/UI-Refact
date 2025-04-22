@@ -1,1 +1,60 @@
 @use "@scss/abstract/index";
+
+.btn,
+.button {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  text-decoration: none;
+  text-align: center;
+  font-family: din-2014, sans-serif;
+  font-weight: 700;
+  line-height: 1.5;
+  padding: 10px 40px;
+  padding: 0.625rem 2.5rem;
+  border-radius: 100px;
+  border-radius: 6.25rem;
+  transition: all 0.4s cubic-bezier(0.16, 0.43, 0, 1);
+  font-size: 16px;
+  font-size: 1rem;
+}
+
+.inline-buttons {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: -10px;
+  margin: -0.625rem;
+  width: 100%;
+  @include index.minMedia(550px) {
+    justify-content: flex-start;
+  }
+  .btn {
+    white-space: nowrap;
+    margin: 10px;
+    margin: 0.625rem;
+    width: 100%;
+    font-size: 18px;
+    @include index.minMedia(550px) {
+      width: auto;
+    }
+    &--purple {
+      background-color: #362196;
+      color: #fff;
+      &:hover {
+        background-color: #27186c;
+      }
+    }
+    &--white {
+      background-color: #fff;
+      color: #de0030;
+      &:hover {
+        background-color: hsla(0, 0%, 100%, 0.7);
+      }
+    }
+  }
+}
