@@ -26,7 +26,7 @@ body {
 // ====================== HERO =========================
 
 .hero-title {
-  font-family: din-2014, sans-serif;
+  font-family: "Din-2014", sans-serif;
   font-weight: 700;
   line-height: 110%;
   text-transform: uppercase;
@@ -34,4 +34,7 @@ body {
   margin-bottom: 1.875rem;
   font-size: 40px;
   font-size: 2.5rem;
+  @include index.minMedia(800px) {
+    font-size: calc(32px + 20 * ((100vw - 600px) / 1080));
+  }
 }
