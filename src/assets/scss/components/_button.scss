@@ -87,7 +87,7 @@
       }
     }
   }
-  .contact-item {
+  .contact-item-link {
     position: relative;
     display: flex;
     align-items: center;
@@ -100,7 +100,43 @@
     background-color: #fff;
     transition: all 0.4s cubic-bezier(0.16, 0.43, 0, 1);
     text-align: center;
+    &:hover {
+      .contact-item-text {
+        right: 100%;
+        opacity: 1;
+        visibility: visible;
+        width: calc(100% + 120px);
+      }
+    }
   }
+
+  .contact-item-text {
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    white-space: nowrap;
+    width: 0;
+    font-family: "Din-2014", sans-serif;
+    font-weight: 700;
+    color: #050029;
+    text-align: left;
+    padding: 0 30px;
+    padding: 0 1.875rem;
+    z-index: -1;
+    font-size: 12px;
+    font-size: 0.75rem;
+    background-color: #fff;
+    transition: all 0.4s cubic-bezier(0.16, 0.43, 0, 1);
+    @include index.minMedia(800px) {
+      font-size: clamp(12px, calc(12px + 2 * ((100vw - 600px) / 1080)), 14px);
+    }
+    @include index.minMedia(1400px) {
+      font-size: 14px;
+      font-size: 0.875rem;
+    }
+  }
+
   .icon-fixed-contact {
     position: relative;
     display: inline-block;
