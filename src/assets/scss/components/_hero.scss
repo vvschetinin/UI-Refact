@@ -77,8 +77,8 @@
     line-height: 1.43;
     margin-bottom: 50px;
     margin-bottom: 3.125rem;
-    font-size: 24px;
-    font-size: 1.5rem;
+    font-size: 22px;
+    font-size: 1.25rem;
     @include index.minMedia(800px) {
       font-size: calc(24px + 0 * ((100vw - 600px) / 1080));
     }

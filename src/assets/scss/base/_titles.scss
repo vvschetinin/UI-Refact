@@ -9,9 +9,12 @@
   text-transform: uppercase;
   margin-bottom: 30px;
   margin-bottom: 1.875rem;
-  font-size: 40px;
-  font-size: 2.5rem;
+  font-size: 37px;
+  @include index.minMedia(550px) {
+    font-size: 40px;
+    font-size: 2.5rem;
+  }
   @include index.minMedia(800px) {
-    font-size: calc(32px + 20 * ((100vw - 600px) / 1080));
+    font-size: clamp(40px, calc(40px + 20 * ((100vw - 600px) / 1080)), 58px);
   }
 }

@@ -58,3 +58,53 @@
     }
   }
 }
+
+.fixed-contact {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  right: 0;
+  display: none;
+  @include index.minMedia(800px) {
+    display: block;
+  }
+}
+
+.fixed-contact-body {
+  list-style: none;
+  margin: -5px 0;
+  margin: -0.3125rem 0;
+  li {
+    padding: 5px 0;
+    padding: 0.3125rem 0;
+    &:last-child {
+      .icon-fixed-contact {
+        position: relative;
+        display: inline-block;
+        width: 30px;
+        line-height: 1;
+      }
+    }
+  }
+  .contact-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    height: 3.75rem;
+    min-width: 60px;
+    line-height: 60px;
+    line-height: 3.75rem;
+    background-color: #fff;
+    transition: all 0.4s cubic-bezier(0.16, 0.43, 0, 1);
+    text-align: center;
+  }
+  .icon-fixed-contact {
+    position: relative;
+    display: inline-block;
+    width: 27px;
+    line-height: 1;
+  }
+}
