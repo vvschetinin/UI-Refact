@@ -1,1 +1,17 @@
 @use "@scss/abstract/index";
+
+.header-logo {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0px;
+  display: block;
+  min-width: 110px;
+  min-width: 6.875rem;
+  z-index: 2;
+  transition: all 0.4s cubic-bezier(0.16, 0.43, 0, 1);
+  transition-delay: 0.4s;
+  @include index.minMedia(1800px) {
+    left: -20px;
+  }
+}
