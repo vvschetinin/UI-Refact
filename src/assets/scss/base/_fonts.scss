@@ -43,3 +43,40 @@
   font-weight: 700;
   font-display: swap;
 }
+
+// ===================== Fonts SourceSansPro ====================
+
+@font-face {
+  font-family: "SourceSansPro";
+  src: url("/assets/fonts/sourcesans/SourceSansPro-ExtraLight.ttf") format("TrueType");
+  font-weight: 275;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SourceSansPro";
+  src: url("/assets/fonts/sourcesans/SourceSansPro-Light.ttf") format("TrueType");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SourceSansPro";
+  src: url("/assets/fonts/sourcesans/SourceSansPro-Regular.ttf") format("TrueType");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SourceSansPro";
+  src: url("/assets/fonts/sourcesans/SourceSansPro-SemiBold.ttf") format("TrueType");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SourceSansPro";
+  src: url("/assets/fonts/sourcesans/SourceSansPro-Bold.ttf") format("TrueType");
+  font-weight: 600;
+  font-display: swap;
+}

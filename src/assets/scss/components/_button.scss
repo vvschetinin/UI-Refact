@@ -144,3 +144,30 @@
     line-height: 1;
   }
 }
+
+.start-project-btn {
+  cursor: pointer;
+  display: inline-block;
+  background: 0 0;
+  border: 0;
+  font-family: SourceSansPro, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  word-spacing: 0.1rem;
+  letter-spacing: 0.1px;
+  text-decoration: none;
+  line-height: 1;
+  padding: 15px 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.4s cubic-bezier(0.16, 0.43, 0, 1);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  @include index.minMedia(1400px) {
+    font-size: 15px;
+  }
+  &:hover {
+    background: #18e591;
+    border: 2px solid #18e591;
+  }
+}
