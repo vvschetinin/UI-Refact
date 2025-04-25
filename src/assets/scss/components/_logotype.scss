@@ -14,4 +14,9 @@
   @include index.minMedia(1800px) {
     left: -20px;
   }
+  .svg-title {
+    font-family: "Din-2014", sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+  }
 }
