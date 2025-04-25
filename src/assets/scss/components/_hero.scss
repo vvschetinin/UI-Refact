@@ -96,3 +96,20 @@
     }
   }
 }
+
+.hero-logo-circle {
+  position: absolute;
+  content: "";
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 38.69vw;
+  right: -14.286vw;
+  &.svg {
+    display: none;
+    @include index.minMedia(800px) {
+      display: inline-block;
+      width: 100%;
+      line-height: 1;
+    }
+  }
+}
