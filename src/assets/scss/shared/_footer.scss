@@ -1,8 +1,28 @@
 @use "@scss/abstract/index";
 
-footer {
+footer,
+.footer * {
+  color: #fff;
+}
+
+.footer {
   background: var(--color-theme-hero);
+  padding: 65px 0 104px;
+  padding: 4.0625rem 0 6.5rem;
+}
+
+.footer-container {
   position: relative;
-  z-index: 5;
-  min-height: 50px;
+  padding: 0 1.25rem;
+  margin: 0 auto;
+  min-height: 100px;
+  z-index: 1;
+  @include index.minMedia(800px) {
+    padding: 0 3.75rem;
+  }
+  @include index.minMedia(1100px) {
+    padding: 0 6.25rem;
+    max-width: 1920px;
+    max-width: 120rem;
+  }
 }

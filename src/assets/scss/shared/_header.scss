@@ -28,10 +28,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 5.952vw;
+  margin: 0 3.952vw;
   left: 0;
   height: 70px;
   transition: all 0.4s cubic-bezier(0.16, 0.43, 0, 1);
+  @include index.minMedia(800px) {
+    margin: 0 5.952vw;
+  }
   @include index.minMedia(1050px) {
     justify-content: center;
   }
