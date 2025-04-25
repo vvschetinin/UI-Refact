@@ -46,40 +46,4 @@
   @include index.minMedia(1050px) {
     display: table;
   }
-  .menu {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    .menu-item {
-      font-family: "SourceSansPro", sans-serif;
-      font-size: 14px;
-      font-weight: 500;
-      color: #fff;
-      word-spacing: 0.1rem;
-      letter-spacing: 0.2px;
-      @include index.minMedia(1400px) {
-        font-size: 15px;
-      }
-      & + .menu-item {
-        @include index.minMedia(1050px) {
-          margin-left: 0.595vw;
-        }
-        @include index.minMedia(1400px) {
-          margin-left: 20px;
-          margin-left: 1.25rem;
-        }
-      }
-    }
-    a {
-      display: inline-block;
-      padding: 1.2vw 1vw;
-      @include index.minMedia(1400px) {
-        padding: 1vw 0.8vw;
-      }
-      &:not([class]):hover {
-        color: #1cd4bd;
-        transition: all 0.4s cubic-bezier(0.16, 0.43, 0, 1);
-      }
-    }
-  }
 }

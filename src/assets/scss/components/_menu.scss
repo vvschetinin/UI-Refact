@@ -1,1 +1,64 @@
 @use "@scss/abstract/index";
+
+.header-menu {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-left: -50px;
+  @include index.minMedia(1100px) {
+    margin-left: -50px;
+  }
+  .menu-item {
+    position: relative;
+    font-family: "SourceSansPro", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    word-spacing: 0.1rem;
+    letter-spacing: 0.2px;
+    @include index.minMedia(1400px) {
+      font-size: 15px;
+    }
+    & + .menu-item {
+      @include index.minMedia(1050px) {
+        margin-left: 0.595vw;
+      }
+      @include index.minMedia(1400px) {
+        margin-left: 20px;
+        margin-left: 1.25rem;
+      }
+    }
+  }
+  a:not([class]) {
+    position: relative;
+    display: inline-block;
+    padding: 1.2vw 1vw;
+    text-transform: uppercase;
+    transition: all 0.4s cubic-bezier(0.16, 0.43, 0, 1);
+    @include index.minMedia(1400px) {
+      padding: 1vw 0.8vw;
+    }
+    &:after {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 0;
+      background: #18e591;
+      position: absolute;
+      bottom: 0.5rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      @include index.minMedia(1800px) {
+        bottom: 0.7rem;
+      }
+    }
+    &:hover {
+      &::after {
+        width: 100%;
+        width: calc(100% - 2vw);
+        @include index.minMedia(1400px) {
+          width: calc(100% - 1.6vw);
+        }
+      }
+    }
+  }
+}

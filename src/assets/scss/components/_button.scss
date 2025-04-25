@@ -10,19 +10,18 @@
   background-color: transparent;
   text-decoration: none;
   text-align: center;
-  font-family: din-2014, sans-serif;
-  font-weight: 700;
+  font-family: "SourceSansPro", sans-serif;
+  font-weight: 500;
   line-height: 1.5;
   padding: 10px 40px;
   padding: 0.625rem 2.5rem;
-  border-radius: 100px;
-  border-radius: 6.25rem;
+  border-radius: 2px;
   transition: all 0.4s cubic-bezier(0.16, 0.43, 0, 1);
   font-size: 16px;
   font-size: 1rem;
 }
 
-.inline-buttons {
+.hero-buttons {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -30,7 +29,7 @@
   margin: -10px;
   margin: -0.625rem;
   width: 100%;
-  @include index.minMedia(550px) {
+  @include index.minMedia(800px) {
     justify-content: flex-start;
   }
   .btn {
@@ -45,13 +44,16 @@
     &--purple {
       background-color: #362196;
       color: #fff;
+      border: 2px solid rgba(255, 255, 255, 0.25);
       &:hover {
         background-color: #27186c;
+        border: 2px solid rgba(255, 255, 255, 0.7);
       }
     }
     &--white {
       background-color: #fff;
       color: #de0030;
+      border: 0.5px solid rgba(255, 255, 255, 0.25);
       &:hover {
         background-color: hsla(0, 0%, 100%, 0.7);
       }
@@ -136,7 +138,6 @@
       font-size: 0.875rem;
     }
   }
-
   .icon-fixed-contact {
     position: relative;
     display: inline-block;
@@ -150,7 +151,7 @@
   display: inline-block;
   background: 0 0;
   border: 0;
-  font-family: SourceSansPro, sans-serif;
+  font-family: "SourceSansPro", sans-serif;
   font-size: 14px;
   font-weight: 500;
   word-spacing: 0.1rem;
@@ -162,6 +163,7 @@
   letter-spacing: 0.5px;
   transition: all 0.4s cubic-bezier(0.16, 0.43, 0, 1);
   border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 2px;
   color: #fff;
   @include index.minMedia(1400px) {
     font-size: 15px;
