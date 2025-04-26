@@ -17,4 +17,17 @@
   @include index.minMedia(800px) {
     font-size: clamp(40px, calc(40px + 20 * ((100vw - 600px) / 1080)), 58px);
   }
+  span {
+    position: relative;
+    display: block;
+    font-family: "Roboto", sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+    color: #fff;
+    word-spacing: 0.1rem;
+    letter-spacing: 0.2px;
+    @include index.minMedia(800px) {
+      font-size: 28px;
+    }
+  }
 }

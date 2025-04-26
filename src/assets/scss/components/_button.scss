@@ -37,6 +37,7 @@
     margin: 10px;
     margin: 0.625rem;
     width: 100%;
+    min-width: 280px;
     font-size: 18px;
     @include index.minMedia(550px) {
       width: auto;

@@ -56,19 +56,40 @@
   color: #fff;
   z-index: 2;
   @include index.minMedia(800px) {
-    max-width: 45.052vw;
+    max-width: none;
     min-width: 600px;
     min-width: 37.5rem;
     text-align: left;
   }
   @include index.minMedia(1100px) {
-    max-width: 45.052vw;
+    max-width: 68vw;
+    min-width: 600px;
+    min-width: 37.5rem;
+  }
+  @include index.minMedia(1400px) {
+    max-width: 58vw;
+    min-width: 600px;
+    min-width: 37.5rem;
+  }
+  @include index.minMedia(1800px) {
+    max-width: 45vw;
     min-width: 600px;
     min-width: 37.5rem;
   }
   .hero-text {
     margin-bottom: 50px;
     margin-bottom: 3.125rem;
+    width: 100%;
+    max-width: none;
+    @include index.minMedia(800px) {
+      max-width: 68vw;
+    }
+    @include index.minMedia(1400px) {
+      max-width: 58vw;
+    }
+    @include index.minMedia(1800px) {
+      max-width: 45vw;
+    }
     &:last-child {
       margin: 0;
     }
