@@ -8,6 +8,26 @@
   z-index: 1000;
   transition: all 0.4s cubic-bezier(0.16, 0.43, 0, 1);
   color: #fff;
+  &.is-active {
+    padding: 0.8rem 0;
+    background: #050029;
+    @include index.minMedia(550px) {
+      padding: 1.25rem 0;
+    }
+    .header-logo {
+      &:after {
+        opacity: 1;
+        visibility: visible;
+        bottom: -30px;
+        bottom: -1.85rem;
+        transition-delay: 0.2s;
+        @include index.minMedia(800px) {
+          bottom: -20px;
+          bottom: -1.25rem;
+        }
+      }
+    }
+  }
   &--large {
     padding: 3.75vw 0;
     .header-logo {

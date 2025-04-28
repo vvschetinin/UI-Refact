@@ -1,3 +1,1 @@
-export {};
-
-console.log("I am is Vladlen");
+import "@/assets/ts/main/script";
