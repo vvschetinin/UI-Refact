@@ -2,7 +2,6 @@ export {};
 
 // ======================= Header Scroll Bottom ============================= //
 
-let lastScroll: number = 0;
 const defaultOffset: number = 40;
 const header: HTMLElement | null = document.querySelector(".header");
 
@@ -16,7 +15,6 @@ const initializeHeader = (): void => {
     } else {
       header.classList.add("is-active");
     }
-    lastScroll = scrollPosition(); // Сохраняем начальную позицию
   }
 };
 
@@ -27,25 +25,10 @@ document.addEventListener("DOMContentLoaded", initializeHeader);
 window.addEventListener("scroll", (): void => {
   if (header) {
     const currentScroll = scrollPosition();
-    // Управление классом is-active
     if (currentScroll > defaultOffset) {
       header.classList.add("is-active");
     } else {
       header.classList.remove("is-active");
     }
-
-    // Используем lastScroll для добавления классов направления прокрутки
-    if (currentScroll > lastScroll && currentScroll > defaultOffset) {
-      header.classList.add("is-scrolling-down");
-      header.classList.remove("is-scrolling-up");
-    } else if (currentScroll < lastScroll && lastScroll > defaultOffset) {
-      header.classList.add("is-scrolling-up");
-      header.classList.remove("is-scrolling-down");
-    } else {
-      // Удаляем классы направления, если прокрутка в пределах defaultOffset
-      header.classList.remove("is-scrolling-up", "is-scrolling-down");
-    }
-
-    lastScroll = currentScroll; // Обновляем lastScroll
   }
 });
