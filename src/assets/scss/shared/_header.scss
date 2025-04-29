@@ -11,17 +11,19 @@
   &.is-active {
     padding: 0.8rem 0;
     background: #050029;
-    @include index.minMedia(550px) {
+    max-height: 100px;
+    @include index.minMedia(800px) {
       padding: 1.25rem 0;
+      max-height: none;
     }
     .header-logo {
       &:after {
-        opacity: 1;
-        visibility: visible;
-        bottom: -30px;
-        bottom: -1.85rem;
+        opacity: 0;
+        bottom: 0;
         transition-delay: 0.2s;
         @include index.minMedia(800px) {
+          opacity: 1;
+          visibility: visible;
           bottom: -20px;
           bottom: -1.25rem;
         }
