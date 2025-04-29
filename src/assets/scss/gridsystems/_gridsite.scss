@@ -6,20 +6,21 @@
 $grid-columns: 10 !default;
 
 .container {
+  position: relative;
   width: 100%;
-  padding: 0 20px;
-  @include index.minMedia(550px) {
-    padding: 0 30px;
-  }
+  max-width: 1920px;
+  max-width: 120rem;
+  padding: 0 1.25rem;
+  margin: 0 auto;
+  min-height: 50px;
+  z-index: 1;
   @include index.minMedia(800px) {
-    padding: 0 50px;
+    padding: 0 3.75rem;
   }
-  @include index.minMedia(1400px) {
-    padding: 0 150px;
-  }
-  @include index.minMedia(1800px) {
-    max-width: 1920px; // Ограничиваем максимальную ширину контейнера
-    padding: 0 200px;
+  @include index.minMedia(1100px) {
+    padding: 0 6.25rem;
+    max-width: 1920px;
+    max-width: 120rem;
   }
 }
 
