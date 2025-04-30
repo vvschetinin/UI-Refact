@@ -17,6 +17,9 @@
       max-height: none;
     }
     .header-logo {
+      @include index.minMedia(1400px) {
+        width: 10.625rem;
+      }
       &:after {
         opacity: 0;
         bottom: 0;
