@@ -28,9 +28,9 @@
 
 .hero--small {
   height: 62vh;
-  min-height: 600px;
-  min-height: 37.5rem;
-  max-height: calc(600px - 20vh);
+  min-height: 680px;
+  min-height: 42.5rem;
+  max-height: calc(650px - 20vh);
 }
 
 .hero-container {
@@ -101,6 +101,17 @@
     }
     &:last-child {
       margin: 0;
+    }
+  }
+  .sectorname {
+    font-family: "SourceSansPro", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #18e591;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    @include index.minMedia(800px) {
+      font-size: 1.25rem;
     }
   }
   p {
