@@ -26,6 +26,13 @@
   }
 }
 
+.hero--small {
+  height: 62vh;
+  min-height: 600px;
+  min-height: 37.5rem;
+  max-height: calc(600px - 20vh);
+}
+
 .hero-container {
   width: 100%;
   height: auto;
@@ -66,6 +73,7 @@
     max-width: 68vw;
     min-width: 600px;
     min-width: 37.5rem;
+    padding-top: 7rem;
   }
   @include index.minMedia(1400px) {
     max-width: 58vw;
