@@ -63,6 +63,36 @@
   }
 }
 
+.nav-toggle {
+  background: 0 0;
+  border: 0;
+  position: absolute;
+  z-index: 1000;
+  width: 32px;
+  height: 32px;
+  top: -18px;
+  right: 0;
+  &__line {
+    position: absolute;
+    display: block;
+    width: 100%;
+    max-width: 26px;
+    height: 2px;
+    right: 0;
+    background: #fff;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    &:first-child {
+      top: 8px;
+    }
+    &:nth-child(2) {
+      top: 16px;
+    }
+    &:nth-child(3) {
+      top: 25px;
+    }
+  }
+}
+
 .footer-nav {
   display: inline-block;
   margin-top: 17px;
@@ -90,6 +120,26 @@
       font-weight: 300;
       &:hover {
         opacity: 0.5;
+      }
+    }
+  }
+}
+
+.menu-open {
+  .nav-toggle {
+    &__line {
+      &:first-child {
+        transform: rotate(135deg);
+        top: 16px;
+      }
+      &:nth-child(2) {
+        transform: rotate(135deg);
+        top: 16px;
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        transform: rotate(45deg);
+        top: 16px;
       }
     }
   }
