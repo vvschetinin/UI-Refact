@@ -62,3 +62,35 @@
     }
   }
 }
+
+.footer-nav {
+  display: inline-block;
+  margin-top: 17px;
+  margin-top: 1rem;
+  width: auto;
+  .footer-menu {
+    display: block;
+    li {
+      display: block;
+      padding: 0;
+      &:last-child {
+        margin-top: 1rem;
+        a {
+          font-weight: 500;
+        }
+      }
+    }
+    a {
+      display: inline-block;
+      color: #fff;
+      line-height: 1;
+      font-size: 16px;
+      font-size: 1rem;
+      padding: 0.5rem 0;
+      font-weight: 300;
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}
