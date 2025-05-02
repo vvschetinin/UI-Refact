@@ -1,0 +1,82 @@
+@use "@scss/abstract/index";
+
+.contact-details {
+  position: relative;
+  padding-top: 10rem;
+  padding-bottom: 6.5rem;
+  color: #fff;
+  background-color: #050029;
+  @include index.minMedia(1100px) {
+    padding-top: 14rem;
+  }
+  .col-50 {
+    width: 100%;
+    @include index.minMedia(1100px) {
+      width: 50%;
+    }
+  }
+  .content {
+    padding: 0;
+    padding-bottom: 2rem;
+    @include index.minMedia(800px) {
+      padding-bottom: 3.2rem;
+    }
+    &:last-child {
+      padding-bottom: 0;
+    }
+    @include index.minMedia(1100px) {
+      padding: 0 20px;
+    }
+    @include index.minMedia(1400px) {
+      padding: 0 2.5vw;
+    }
+    @include index.minMedia(1800px) {
+      padding: 0 4.5vw;
+    }
+  }
+  .subtitle {
+    font-size: 18px;
+    line-height: 1.6;
+    @include index.minMedia(800px) {
+      font-size: 20px;
+    }
+  }
+  .title-wrap {
+    padding-top: 2rem;
+    @include index.minMedia(800px) {
+      padding-top: 3.2rem;
+    }
+    .contact-title {
+      font-size: calc(24px + 0 * ((100vw - 600px) / 1080));
+      font-weight: 500;
+    }
+  }
+  .contact-info {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1;
+    padding-top: 1.5rem;
+    li + li {
+      margin-top: 0.85rem;
+    }
+    a {
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+.contact-form-wrap {
+  padding-top: 0.5rem;
+  .form-title {
+    font-family: "SourceSansPro", sans-serif;
+    font-size: calc(24px + 0 * (100vw - 600px) / 1080);
+    font-weight: 500;
+    line-height: 1;
+    @include index.minMedia(1100px) {
+      font-size: calc(24px + 10 * ((100vw - 600px) / 1080));
+      font-weight: 400;
+    }
+  }
+}
