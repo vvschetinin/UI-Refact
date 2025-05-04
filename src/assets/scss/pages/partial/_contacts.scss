@@ -2,12 +2,13 @@
 
 .contact-details {
   position: relative;
-  padding-top: 10rem;
-  padding-bottom: 6.5rem;
+  padding-top: 10.5rem;
+  padding-bottom: 4.5rem;
   color: #fff;
   background-color: #050029;
   @include index.minMedia(1100px) {
     padding-top: 14rem;
+    padding-bottom: 6.5rem;
   }
   .col-50 {
     width: 100%;
