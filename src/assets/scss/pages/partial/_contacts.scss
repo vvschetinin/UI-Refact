@@ -35,11 +35,18 @@
       padding: 0 4.5vw;
     }
   }
-  .subtitle {
+  .annotation {
     font-size: 18px;
+    font-weight: 300;
     line-height: 1.6;
     @include index.minMedia(800px) {
       font-size: 20px;
+    }
+    p {
+      margin-top: 0.7rem;
+      &:first-child {
+        margin-top: 0;
+      }
     }
   }
   .title-wrap {
