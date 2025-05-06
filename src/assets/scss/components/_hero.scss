@@ -33,6 +33,13 @@
   max-height: calc(650px - 20vh);
 }
 
+.hero--error {
+  height: 57vh;
+  min-height: 550px;
+  min-height: 34.375rem;
+  max-height: calc(550px - 20vh);
+}
+
 .hero-container {
   width: 100%;
   height: auto;
