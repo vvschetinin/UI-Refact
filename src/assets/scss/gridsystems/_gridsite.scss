@@ -4,11 +4,12 @@
 
 // Устанавливаем количество колонок в 10
 $grid-columns: 10 !default;
+$gutter: 1.25rem; // 20px
+$mobile-breakpoint: 34.375rem; // 550px / 16px
 
 .container {
   position: relative;
   width: 100%;
-  max-width: 1920px;
   max-width: 120rem;
   padding: 0 1.25rem;
   margin: 0 auto;
@@ -30,10 +31,7 @@ $grid-columns: 10 !default;
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-left: -20px; // Отрицательный margin для компенсации padding у колонок
-  @include index.minMedia(800px) {
-    margin-left: -20px; // Для больших экранов
-  }
+  margin-left: -$gutter; // 20px / 16px = 1.25rem
 }
 
 // Более эффективный способ генерации стилей для колонок
@@ -53,9 +51,7 @@ $columns: (
 @each $col, $width in $columns {
   .col-#{$col} {
     width: $width;
-
-    // Добавляем медиа-запрос для экранов меньше 550px
-    @media (max-width: 549px) {
+    @media (max-width: $mobile-breakpoint) {
       width: 100%;
     }
   }
@@ -70,18 +66,17 @@ $columns: (
   }
 }
 
-[class*=" col-"],
-[class^="col-"] {
+// Общие стили для колонок
+[class*="col-"] {
   box-sizing: border-box;
-  padding: 0 20px;
-  min-height: 1px;
+  padding: 0 $gutter;
   position: relative;
 }
 
+// Удаление отступов
 .no-gutters {
   margin-left: 0;
-  & > [class*="col-"],
-  & > [class^="col-"] {
+  & > [class*="col-"] {
     padding: 0;
   }
 }
