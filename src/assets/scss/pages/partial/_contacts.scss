@@ -10,12 +10,6 @@
     padding-top: 14rem;
     padding-bottom: 6.5rem;
   }
-  .col-50 {
-    width: 100%;
-    @include index.minMedia(1100px) {
-      width: 50%;
-    }
-  }
   .content {
     padding: 0;
     padding-bottom: 2rem;
@@ -37,12 +31,6 @@
   }
   .annotation {
     color: #fff;
-    p {
-      margin-top: 0.7rem;
-      &:first-child {
-        margin-top: 0;
-      }
-    }
   }
   .title-wrap {
     padding-top: 2rem;

@@ -17,7 +17,7 @@ body {
   font-weight: 300;
   line-height: index.$base-line-height;
   background-color: var(--color-theme-body);
-  color: var(--color-text-primary);
+  color: var(--color-text-dark);
 }
 
 h2 {
@@ -30,4 +30,7 @@ p {
   font-size: clamp(17px, calc(18px + 20 * ((100vw - 600px) / 1080)), 20px);
   font-weight: 300;
   line-height: 1.6;
+  & + p {
+    margin-top: 0.7rem;
+  }
 }
