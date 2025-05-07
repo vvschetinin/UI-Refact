@@ -36,12 +36,7 @@
     }
   }
   .annotation {
-    font-size: 18px;
-    font-weight: 300;
-    line-height: 1.6;
-    @include index.minMedia(800px) {
-      font-size: 20px;
-    }
+    color: #fff;
     p {
       margin-top: 0.7rem;
       &:first-child {
@@ -60,12 +55,12 @@
     }
   }
   .contact-info {
-    font-size: 18px;
+    font-size: clamp(17px, calc(18px + 20 * ((100vw - 600px) / 1080)), 20px);
     font-weight: 300;
     line-height: 1;
     padding-top: 1.5rem;
     li + li {
-      margin-top: 0.85rem;
+      margin-top: 0.7rem;
     }
     a {
       &:hover {

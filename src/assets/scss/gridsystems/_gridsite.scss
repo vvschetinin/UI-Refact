@@ -19,6 +19,9 @@ $grid-columns: 10 !default;
   @include index.minMedia(1100px) {
     padding: 0 6.25rem;
   }
+  &--middle {
+    max-width: 105rem;
+  }
   &--small {
     max-width: 67rem;
   }

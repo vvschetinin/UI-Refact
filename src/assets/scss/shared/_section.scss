@@ -9,56 +9,9 @@ section,
 .section-type {
   height: auto;
   padding: 3.75rem 0;
-  background: #f2f2f2;
+  background: var(--color-theme-section);
   margin-top: -10px;
   @include index.minMedia(800px) {
     padding: 6rem 0;
-  }
-}
-
-.enquiry {
-  display: flex;
-  align-items: center;
-  background-color: #1cd4bd;
-  height: auto;
-  min-height: 5.375rem;
-  z-index: 100;
-  &-wrap {
-    width: 100%;
-    max-width: 120rem;
-    max-width: 1920px;
-    height: auto;
-    padding: 0 1.25rem;
-    text-align: center;
-  }
-  &-form {
-    position: relative;
-    font-family: "SourceSansPro", sans-serif;
-    font-size: 18px;
-    font-weight: 500;
-    color: #111;
-    text-transform: uppercase;
-    display: inline-block;
-    padding: 1rem 1.5rem;
-    @include index.minMedia(800px) {
-      font-size: 20px;
-    }
-    span {
-      display: inline-block;
-      color: #fff;
-      font-weight: 700;
-      padding: 0 0.5rem;
-    }
-    &:before {
-      position: absolute;
-      content: "❯";
-      right: 0.5rem;
-      transition: all 0.4s cubic-bezier(0.16, 0.43, 0, 1);
-    }
-    &:hover {
-      &:before {
-        right: -0.5rem;
-      }
-    }
   }
 }

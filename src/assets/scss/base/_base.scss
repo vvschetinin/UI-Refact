@@ -3,55 +3,55 @@
 // ====================================
 
 img {
-	max-width: 100%;
+  max-width: 100%;
 }
 
 a {
-	color: inherit;
-	text-decoration: none;
-	transition: all 0.4s cubic-bezier(0.16, 0.43, 0, 1);
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.16, 0.43, 0, 1);
 }
 
 h1,
 h2,
 h3 {
-	margin: 0;
-	padding: 0;
-	background: none;
+  margin: 0;
+  padding: 0;
+  background: none;
 }
 
 p {
-	margin: 0;
-	padding: 0;
-	background: none;
+  margin: 0;
+  padding: 0;
+  background: none;
 }
 
 ul {
-	margin: 0;
-	padding: 0;
-	li {
-		list-style: none;
-	}
+  margin: 0;
+  padding: 0;
+  li {
+    list-style: none;
+  }
 }
 
 .svg-default {
-	vertical-align: middle;
-	line-height: 1;
+  vertical-align: middle;
+  line-height: 1;
 }
 
 .site-wrapper {
-	position: relative;
-	overflow: hidden;
-	width: 100%;
-	min-height: 100vh;
-	margin: 0 auto;
-	display: flex;
-	flex-direction: column;
-	left: 0;
-	background: var(--color-theme-black);
-	transition: all 0.4s cubic-bezier(0.16, 0.43, 0, 1);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  background: var(--color-theme-black);
+  transition: all 0.4s cubic-bezier(0.16, 0.43, 0, 1);
 }
 
 .site-content {
-	flex: 1;
+  flex: 1;
 }
