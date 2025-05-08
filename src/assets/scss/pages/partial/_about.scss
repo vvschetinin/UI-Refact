@@ -26,7 +26,7 @@
   }
 }
 
-// ====================================
+// ================= Блок картинок ===================
 
 .about-grid {
   display: grid;
@@ -36,13 +36,13 @@
   width: 100%;
   margin: 0 auto;
   @include index.minMedia(800px) {
-    max-width: 85%;
+    width: 85%;
   }
   @include index.minMedia(1100px) {
-    max-width: 80%;
+    width: 80%;
   }
   @include index.minMedia(1400px) {
-    max-width: 70%;
+    width: 70%;
   }
 }
 
@@ -108,6 +108,6 @@
   .card3 {
     grid-column: 1 / 2; /* все в одной колонке */
     grid-row: auto; /* автоматическое расположение по строкам */
-    height: 200px; /* одинаковая фиксированная высота */
+    height: auto; /* одинаковая фиксированная высота */
   }
 }
