@@ -1,0 +1,29 @@
+// _mygrid.scss
+@use "@scss/abstract/index";
+@use "@scss/gridsystems/gridsite";
+
+.col-75 {
+  width: 100%;
+  @include index.minMedia(1100px) {
+    width: 65%;
+  }
+  @include index.minMedia(1400px) {
+    width: 65%;
+  }
+  @include index.minMedia(1800px) {
+    width: 75%;
+  }
+}
+
+.col-25 {
+  width: 100%;
+  @include index.minMedia(1100px) {
+    width: 35%;
+  }
+  @include index.minMedia(1400px) {
+    width: 35%;
+  }
+  @include index.minMedia(1800px) {
+    width: 25%;
+  }
+}
