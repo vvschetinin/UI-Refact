@@ -36,16 +36,13 @@
   width: 100%;
   margin: 0 auto;
   @include index.minMedia(800px) {
-    width: 85%;
+    max-width: 85%;
   }
   @include index.minMedia(1100px) {
-    width: 75%;
+    max-width: 80%;
   }
   @include index.minMedia(1400px) {
-    width: 70%;
-  }
-  @include index.minMedia(1800px) {
-    width: 65%;
+    max-width: 70%;
   }
 }
 
