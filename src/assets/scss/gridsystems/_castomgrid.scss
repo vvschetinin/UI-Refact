@@ -8,7 +8,7 @@
     width: 65%;
   }
   @include index.minMedia(1400px) {
-    width: 65%;
+    width: 70%;
   }
   @include index.minMedia(1800px) {
     width: 75%;
@@ -21,7 +21,7 @@
     width: 35%;
   }
   @include index.minMedia(1400px) {
-    width: 35%;
+    width: 30%;
   }
   @include index.minMedia(1800px) {
     width: 25%;
