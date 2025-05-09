@@ -1,0 +1,99 @@
+// ==================== MODULES ====================
+@use "sass:math";
+@use "sass:map";
+@use "@scss/abstract/index";
+
+// ==================== VARIABLES ====================
+$gutter: 30px;
+
+// ==================== MIXINS ====================
+@mixin respond-min($key) {
+  @if map.has-key(index.$grid-breakpoints, $key) {
+    $value: map.get(index.$grid-breakpoints, $key);
+    @media (min-width: $value) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint `#{$key}` не существует.";
+  }
+}
+
+// ==================== BASE STYLES ====================
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 120rem;
+  padding: 0 1.25rem;
+  margin: 0 auto;
+  z-index: 1;
+  @include index.minMedia(800px) {
+    padding: 0 3.75rem;
+  }
+  @include index.minMedia(1100px) {
+    padding: 0 6.25rem;
+  }
+  &--middle {
+    @extend .container;
+    max-width: 105rem;
+  }
+  &--small {
+    @extend .container;
+    max-width: 67rem;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -#{math.div($gutter, 2)};
+  margin-right: -#{math.div($gutter, 2)};
+}
+
+.col,
+[class^="col-"],
+[class*=" col-"] {
+  padding-left: #{math.div($gutter, 2)};
+  padding-right: #{math.div($gutter, 2)};
+  min-height: 1px;
+  position: relative;
+  width: 100%;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+// ==================== WIDTH CLASSES ====================
+@for $i from 1 through 100 {
+  .col-#{$i} {
+    $percent: math.div($i, 100);
+    flex: 0 0 #{math.percentage($percent)};
+    max-width: #{math.percentage($percent)};
+  }
+}
+
+// ==================== RESPONSIVE CLASSES ====================
+@each $key, $value in index.$grid-breakpoints {
+  @if $key != xs {
+    // xs — по умолчанию
+    @include respond-min($key) {
+      @for $i from 1 through 100 {
+        .col-#{$key}-#{$i} {
+          $percent: math.div($i, 100);
+          flex: 0 0 #{math.percentage($percent)};
+          max-width: #{math.percentage($percent)};
+        }
+      }
+    }
+  }
+}
+
+.no-gutters {
+  margin-left: 0;
+  & > [class*="col-"],
+  & > [class^="col-"] {
+    padding: 0;
+  }
+}
