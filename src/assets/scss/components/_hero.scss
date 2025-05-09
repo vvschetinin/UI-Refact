@@ -22,6 +22,9 @@
     min-height: 61.25rem;
   }
   @include index.minMedia(800px) {
+    max-height: calc(1000px - 20vh);
+  }
+  @include index.minMedia(1400px) {
     max-height: calc(1400px - 20vh);
   }
 }

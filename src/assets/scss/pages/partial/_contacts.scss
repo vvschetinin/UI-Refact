@@ -36,10 +36,6 @@
     @include index.minMedia(800px) {
       padding-top: 3.2rem;
     }
-    .contact-title {
-      font-size: calc(24px + 0 * ((100vw - 600px) / 1080));
-      font-weight: 500;
-    }
   }
   .contact-info {
     font-size: clamp(17px, calc(18px + 20 * ((100vw - 600px) / 1080)), 20px);
