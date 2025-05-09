@@ -32,3 +32,24 @@ window.addEventListener("scroll", (): void => {
     }
   }
 });
+
+// ================== Управление показом видео ======================
+
+const videoElement = document.getElementById("heroVideo") as HTMLVideoElement | null;
+
+if (!videoElement) {
+  console.warn('Элемент video с id="heroVideo" не найден.');
+} else {
+  const handleResize = (): void => {
+    if (window.innerWidth <= 550) {
+      videoElement.pause();
+    } else {
+      videoElement.play().catch((error: Error) => {
+        console.log("Автовоспроизведение заблокировано:", error.message);
+      });
+    }
+  };
+
+  handleResize();
+  window.addEventListener("resize", handleResize);
+}
