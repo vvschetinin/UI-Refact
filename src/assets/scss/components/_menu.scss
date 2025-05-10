@@ -95,17 +95,24 @@
 
 .footer-nav {
   display: inline-block;
-  margin-top: 17px;
-  margin-top: 1rem;
+  margin-top: 0;
   width: auto;
+  @include index.minMedia(550px) {
+    margin-top: 17px;
+    margin-top: 1rem;
+  }
   .footer-menu {
-    display: block;
+    display: none;
+    @include index.minMedia(550px) {
+      display: block;
+    }
     li {
       display: block;
       padding: 0;
       &:last-child {
         margin-top: 1rem;
         a {
+          font-size: clamp(17px, calc(17px + 20 * ((100vw - 600px) / 1080)), 20px);
           font-weight: 500;
         }
       }
