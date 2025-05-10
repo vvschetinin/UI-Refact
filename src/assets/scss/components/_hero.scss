@@ -25,7 +25,7 @@
     max-height: calc(1000px - 20vh);
   }
   @include index.minMedia(1400px) {
-    max-height: calc(1400px - 20vh);
+    max-height: calc(1400px - 25vh);
   }
 }
 
@@ -82,7 +82,7 @@
   @include index.minMedia(1100px) {
     max-width: 70vw;
     min-width: 600px;
-    padding-top: 7rem;
+    padding-top: 5rem;
   }
   @include index.minMedia(1400px) {
     max-width: 60vw;

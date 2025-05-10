@@ -3,66 +3,41 @@
 @use "variables" as vars; // Import variables to use within mixins
 
 @mixin media($max-width) {
-	@media screen and (max-width: $max-width) {
-		@content;
-	}
+  @media screen and (max-width: $max-width) {
+    @content;
+  }
 }
 
 @mixin minMedia($min-width) {
-	@media screen and (min-width: $min-width) {
-		@content;
-	}
+  @media screen and (min-width: $min-width) {
+    @content;
+  }
 }
 
 @mixin square($size: 1em) {
-	width: $size;
-	height: $size;
+  width: $size;
+  height: $size;
 }
 
 @mixin generate_styles($styles) {
-	@each $class_name, $style_names in $styles {
-		#{$class_name} {
-			@each $style_name, $style_value in $style_names {
-				#{$style_name}: #{$style_value};
-			}
-		}
-	}
-
-	@each $bp, $val in vars.$grid-breakpoints {
-		@if $bp != "xs" {
-			@each $class_name, $style_names in $styles {
-				#{$class_name}--#{$bp} {
-					@include minMedia($val) {
-						@each $style_name, $style_value in $style_names {
-							#{$style_name}: #{$style_value};
-						}
-					}
-				}
-			}
-		}
-	}
-}
-
-@mixin generate_bp_content($grid-breakpoints: vars.$grid-breakpoints) {
-	@content;
-	@each $bp, $val in $grid-breakpoints {
-		@if $bp != "xs" {
-			&--#{$bp} {
-				@include minMedia($val) {
-					@content;
-				}
-			}
-		}
-	}
-}
-
-/* stylelint-disable */
-@mixin font-face($font-family, $url, $format, $weight, $style) {
-	@font-face {
-		font-family: "#{$font-family}";
-		src: url("../fonts/#{$url}") format("#{$format}");
-		font-weight: #{$weight};
-		font-display: swap;
-		font-style: $style;
-	}
+  @each $class_name, $style_names in $styles {
+    #{$class_name} {
+      @each $style_name, $style_value in $style_names {
+        #{$style_name}: #{$style_value};
+      }
+    }
+  }
+  @each $bp, $val in vars.$grid-breakpoints {
+    @if $bp != "xs" {
+      @each $class_name, $style_names in $styles {
+        #{$class_name}--#{$bp} {
+          @include minMedia($val) {
+            @each $style_name, $style_value in $style_names {
+              #{$style_name}: #{$style_value};
+            }
+          }
+        }
+      }
+    }
+  }
 }

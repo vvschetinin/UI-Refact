@@ -18,53 +18,6 @@ $gutter: 30px;
   }
 }
 
-// ==================== BASE STYLES ====================
-* {
-  box-sizing: border-box;
-}
-
-.container {
-  position: relative;
-  width: 100%;
-  max-width: 120rem;
-  padding: 0 1.25rem;
-  margin: 0 auto;
-  z-index: 1;
-  @include index.minMedia(800px) {
-    padding: 0 3.75rem;
-  }
-  @include index.minMedia(1100px) {
-    padding: 0 6.25rem;
-  }
-  &--middle {
-    @extend .container;
-    max-width: 105rem;
-  }
-  &--small {
-    @extend .container;
-    max-width: 67rem;
-  }
-}
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -#{math.div($gutter, 2)};
-  margin-right: -#{math.div($gutter, 2)};
-}
-
-.col,
-[class^="col-"],
-[class*=" col-"] {
-  padding-left: #{math.div($gutter, 2)};
-  padding-right: #{math.div($gutter, 2)};
-  min-height: 1px;
-  position: relative;
-  width: 100%;
-  flex-grow: 0;
-  flex-shrink: 0;
-}
-
 // ==================== WIDTH CLASSES ====================
 @for $i from 1 through 100 {
   .col-#{$i} {
@@ -160,6 +113,48 @@ $gutter: 30px;
       }
     }
   }
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 120rem;
+  padding: 0 1.25rem;
+  margin: 0 auto;
+  z-index: 1;
+  @include index.minMedia(800px) {
+    padding: 0 3.75rem;
+  }
+  @include index.minMedia(1100px) {
+    padding: 0 6.25rem;
+  }
+  &--middle {
+    @extend .container;
+    max-width: 105rem;
+  }
+  &--small {
+    @extend .container;
+    max-width: 67rem;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -#{math.div($gutter, 2)};
+  margin-right: -#{math.div($gutter, 2)};
+}
+
+.col,
+[class^="col-"],
+[class*=" col-"] {
+  padding-left: #{math.div($gutter, 2)};
+  padding-right: #{math.div($gutter, 2)};
+  min-height: 1px;
+  position: relative;
+  width: 100%;
+  flex-grow: 0;
+  flex-shrink: 0;
 }
 
 .no-gutters {
