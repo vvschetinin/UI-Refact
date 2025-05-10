@@ -35,21 +35,28 @@ window.addEventListener("scroll", (): void => {
 
 // ================== Управление показом видео ======================
 
-const videoElement = document.getElementById("heroVideo") as HTMLVideoElement | null;
+const videoElements = document.querySelectorAll<HTMLVideoElement>(".hero-video");
 
-if (!videoElement) {
-  console.warn('Элемент video с id="heroVideo" не найден.');
+if (videoElements.length === 0) {
+  console.warn("Видео с классом .hero-video не найдено.");
 } else {
   const handleResize = (): void => {
-    if (window.innerWidth <= 550) {
-      videoElement.pause();
-    } else {
-      videoElement.play().catch((error: Error) => {
-        console.log("Автовоспроизведение заблокировано:", error.message);
-      });
-    }
+    const isMobile = window.innerWidth <= 550;
+
+    videoElements.forEach((video) => {
+      if (!video) return;
+
+      if (isMobile) {
+        video.pause();
+      } else {
+        video.play().catch((error: Error) => {
+          console.log("Автовоспроизведение заблокировано:", error.message);
+        });
+      }
+    });
   };
 
   handleResize();
+
   window.addEventListener("resize", handleResize);
 }
