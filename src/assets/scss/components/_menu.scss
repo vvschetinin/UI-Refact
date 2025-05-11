@@ -1,0 +1,153 @@
+@use "@scss/abstract/index";
+
+.header-menu {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-left: -50px;
+  @include index.minMedia(1100px) {
+    margin-left: -50px;
+  }
+  .menu-item {
+    position: relative;
+    font-family: "SourceSansPro", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    word-spacing: 0.1rem;
+    letter-spacing: 0.2px;
+    @include index.minMedia(1400px) {
+      font-size: 15px;
+    }
+    & + .menu-item {
+      @include index.minMedia(1050px) {
+        margin-left: 0.595vw;
+      }
+      @include index.minMedia(1400px) {
+        margin-left: 20px;
+        margin-left: 1.25rem;
+      }
+    }
+  }
+  a:not([class]) {
+    position: relative;
+    display: inline-block;
+    padding: 1.2vw 1vw;
+    text-transform: uppercase;
+    transition: all 0.4s cubic-bezier(0.16, 0.43, 0, 1);
+    @include index.minMedia(1400px) {
+      padding: 1vw 0.8vw;
+    }
+    &:after {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 0;
+      background: #18e591;
+      position: absolute;
+      bottom: 0.5rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      @include index.minMedia(1800px) {
+        bottom: 0.7rem;
+      }
+    }
+    &:hover {
+      &::after {
+        width: 100%;
+        width: calc(100% - 2vw);
+        @include index.minMedia(1400px) {
+          width: calc(100% - 1.6vw);
+        }
+      }
+    }
+  }
+}
+
+.nav-toggle {
+  background: 0 0;
+  border: 0;
+  position: absolute;
+  z-index: 1000;
+  width: 32px;
+  height: 32px;
+  top: -18px;
+  right: 0;
+  &__line {
+    position: absolute;
+    display: block;
+    width: 100%;
+    max-width: 26px;
+    height: 2px;
+    right: 0;
+    background: #fff;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    &:first-child {
+      top: 8px;
+    }
+    &:nth-child(2) {
+      top: 16px;
+    }
+    &:nth-child(3) {
+      top: 25px;
+    }
+  }
+}
+
+.footer-nav {
+  display: inline-block;
+  margin-top: 1.5rem;
+  width: auto;
+  @include index.minMedia(550px) {
+    margin-top: 0;
+  }
+  @include index.minMedia(800px) {
+    margin-top: 1rem;
+  }
+  .footer-menu {
+    display: block;
+    li {
+      display: block;
+      padding: 0;
+      & + li {
+        margin-top: 0.5rem;
+      }
+      &:nth-of-type(2) {
+        margin-top: 1rem;
+      }
+      &:last-child {
+        margin-top: 1rem;
+        a {
+          font-weight: 500;
+        }
+      }
+    }
+    a {
+      color: #fff;
+      line-height: 1;
+      font-weight: 300;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+.menu-open {
+  .nav-toggle {
+    &__line {
+      &:first-child {
+        transform: rotate(135deg);
+        top: 16px;
+      }
+      &:nth-child(2) {
+        transform: rotate(135deg);
+        top: 16px;
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        transform: rotate(45deg);
+        top: 16px;
+      }
+    }
+  }
+}
