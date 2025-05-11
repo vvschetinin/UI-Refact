@@ -23,7 +23,7 @@ body {
 h2 {
   font-weight: 300;
   line-height: 1.15;
-  font-size: clamp(28px, calc(30px + 20 * ((100vw - 600px) / 1080)), 35px);
+  font-size: clamp(30px, calc(30px + 20 * ((100vw - 600px) / 1080)), 38px);
 }
 
 h3 {
@@ -43,5 +43,10 @@ p {
     @include index.minMedia(800px) {
       margin-top: 1.4rem;
     }
+  }
+  &.p-accent {
+    font-weight: 500;
+    color: #fff;
+    margin-top: none;
   }
 }
