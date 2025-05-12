@@ -34,3 +34,22 @@
     }
   }
 }
+
+.h3-title {
+  font-size: 22px;
+  @include index.minMedia(550px) {
+    font-size: 1.25rem;
+  }
+  @include index.minMedia(800px) {
+    font-size: 1.45rem;
+  }
+  @include index.minMedia(1100px) {
+    font-size: 1.7rem;
+  }
+  @include index.minMedia(1400px) {
+    font-size: 1.8rem;
+  }
+  @media (max-height: 450px) and (orientation: landscape) {
+    font-size: 24px;
+  }
+}

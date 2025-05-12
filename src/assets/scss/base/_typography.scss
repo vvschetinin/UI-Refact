@@ -22,14 +22,13 @@ body {
 
 h2 {
   font-weight: 300;
-  line-height: 1.15;
+  line-height: 1.2;
   font-size: clamp(30px, calc(30px + 20 * ((100vw - 600px) / 1080)), 38px);
 }
 
 h3 {
   font-weight: 300;
-  line-height: 1.15;
-  font-size: clamp(20px, calc(20px + 20 * ((100vw - 600px) / 1080)), 24px);
+  line-height: 1.2;
 }
 
 p {

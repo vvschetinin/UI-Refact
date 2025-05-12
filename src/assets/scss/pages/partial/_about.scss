@@ -112,27 +112,19 @@
   }
 }
 
-.special-list {
-  padding-left: 2rem;
+.competences-list {
+  padding-left: 25px;
   li {
     position: relative;
-    & + li {
-      margin-top: 0.7rem;
-    }
-    &::before {
+    &:before {
+      content: "";
+      display: block;
+      width: 15px;
+      height: 2px;
+      background-color: #18e591;
       position: absolute;
-      content: "•";
-      color: #fff;
-      font-size: 2rem;
-      left: -1.5rem;
-      top: -12px;
-      @include index.minMedia(550px) {
-        top: -8px;
-      }
+      left: -25px;
+      top: 15px;
     }
-  }
-  span {
-    font-weight: 500;
-    color: #fff;
   }
 }
