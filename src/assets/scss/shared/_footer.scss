@@ -45,15 +45,19 @@
 .footer-address {
   position: relative;
   padding-top: 6rem;
-  @include index.minMedia(800px) {
+  @include index.minMedia(550px) {
     padding-top: 8rem;
   }
+  @include index.minMedia(1400px) {
+    padding-top: 10rem;
+  }
   li {
+    line-height: 1;
     & + li {
-      margin-top: 0.5rem;
+      margin-top: 0.7rem;
     }
     &:last-child {
-      margin-top: 1.5rem;
+      margin-top: 2rem;
     }
     &:nth-last-of-type(3) {
       margin-top: 2rem;
@@ -108,17 +112,6 @@
         background-color: #fff;
         opacity: 0.5;
       }
-    }
-  }
-}
-
-.p-present {
-  a {
-    color: #fff;
-    line-height: 1;
-    font-weight: 300;
-    &:hover {
-      opacity: 0.7;
     }
   }
 }

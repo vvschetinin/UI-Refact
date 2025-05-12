@@ -93,39 +93,6 @@
   }
 }
 
-.footer-nav {
-  display: inline-block;
-  margin-top: 1.5rem;
-  width: auto;
-  @include index.minMedia(550px) {
-    margin-top: 0;
-  }
-  @include index.minMedia(800px) {
-    margin-top: 1rem;
-  }
-  .footer-menu {
-    display: block;
-    li {
-      display: block;
-      padding: 0;
-      & + li {
-        margin-top: 0.5rem;
-      }
-      &:nth-of-type(2) {
-        margin-top: 1rem;
-      }
-    }
-    a {
-      color: #fff;
-      line-height: 1;
-      font-weight: 300;
-      &:hover {
-        opacity: 0.7;
-      }
-    }
-  }
-}
-
 .menu-open {
   .nav-toggle {
     &__line {

@@ -63,7 +63,7 @@
     max-width: 120rem;
     padding: 0 100px;
     padding: 0 6.25rem;
-    margin-top: -10vh;
+    margin-top: -7vh;
   }
 }
 
@@ -82,7 +82,7 @@
   @include index.minMedia(1100px) {
     max-width: 70vw;
     min-width: 600px;
-    padding-top: 5rem;
+    //padding-top: 5rem;
   }
   @include index.minMedia(1400px) {
     max-width: 60vw;
@@ -108,6 +108,12 @@
     }
     &:last-child {
       margin: 0;
+    }
+    span {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 500;
+      color: #fff;
     }
   }
   .sectorname {
