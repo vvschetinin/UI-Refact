@@ -166,6 +166,7 @@
   border: 2px solid rgba(255, 255, 255, 0.25);
   border-radius: 2px;
   color: #fff;
+  min-width: 205px;
   @include index.minMedia(1400px) {
     font-size: 15px;
   }

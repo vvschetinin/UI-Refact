@@ -12,4 +12,9 @@ section,
   @include index.minMedia(800px) {
     padding: 6rem 0;
   }
+  &--hero {
+    @include index.minMedia(800px) {
+      padding-top: 4rem;
+    }
+  }
 }

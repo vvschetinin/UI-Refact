@@ -128,3 +128,21 @@
     }
   }
 }
+
+.contact-description {
+  .deco-line {
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      display: block;
+      width: 30px;
+      height: 2px;
+      background: #18e591;
+      @include index.minMedia(800px) {
+        width: 50px;
+        right: 0;
+      }
+    }
+  }
+}
