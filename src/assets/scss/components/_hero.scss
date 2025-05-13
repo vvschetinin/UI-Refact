@@ -13,16 +13,14 @@
 }
 
 .hero--large {
-  min-height: 100vh;
-  max-height: 980px;
-  max-height: 61.25rem;
+  height: 100vh;
+  max-height: 850px;
   @include index.minMedia(550px) {
-    height: 120vh;
-    min-height: 980px;
-    min-height: 61.25rem;
+    height: 100vh;
+    max-height: 900px;
   }
   @include index.minMedia(800px) {
-    max-height: calc(1000px - 20vh);
+    max-height: calc(1100px - 20vh);
   }
   @include index.minMedia(1400px) {
     max-height: calc(1400px - 25vh);
