@@ -1,0 +1,14 @@
+@use "@scss/abstract/index";
+
+.content-block {
+  margin-bottom: 35px;
+  @include index.minMedia(550px) {
+    margin-bottom: 50px;
+  }
+  @include index.minMedia(1100px) {
+    margin-bottom: 70px;
+  }
+  @include index.minMedia(1400px) {
+    margin-bottom: 100px;
+  }
+}

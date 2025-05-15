@@ -65,6 +65,18 @@
   }
 }
 
+.hero--small {
+  .hero-container {
+    margin-top: 2rem;
+  }
+}
+
+.hero--error {
+  .hero-container {
+    margin-top: 3rem;
+  }
+}
+
 .hero-content {
   position: relative;
   width: 100%;

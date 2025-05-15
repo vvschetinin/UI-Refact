@@ -13,7 +13,13 @@
     max-height: 18.333vw;
   }
   &--small {
-    bottom: -20px;
+    bottom: -10px;
+    @include index.minMedia(550px) {
+      bottom: -15px;
+    }
+    @include index.minMedia(1100px) {
+      bottom: -20px;
+    }
   }
   svg {
     height: 100%;
