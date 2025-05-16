@@ -149,6 +149,24 @@
   }
 }
 
+.find-btn,
+.form-btn,
+.start-project-btn,
+.pagination-btn,
+.view-btn {
+  @extend .button;
+}
+
+.find-btn,
+.view-btn {
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  &:hover {
+    border: 2px solid rgba(255, 255, 255, 1);
+    color: #fff;
+  }
+}
+
 .start-project-btn {
   cursor: pointer;
   display: inline-block;

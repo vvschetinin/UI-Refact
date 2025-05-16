@@ -1,0 +1,84 @@
+@use "@scss/abstract/index";
+
+.services-item {
+  display: block;
+  width: 100%;
+  height: auto;
+  background-color: #1d1d1d;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  max-width: 550px;
+  margin: 0 auto;
+  @include index.minMedia(550px) {
+    background-color: rgba(0, 0, 0, 0.1);
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.25);
+      .find-btn {
+        border: 2px solid #fff;
+        color: #fff;
+      }
+      .services-banner {
+        &:before {
+          background: rgba(0, 0, 0, 0);
+        }
+      }
+    }
+  }
+  .services-banner {
+    background-color: #fff;
+    position: relative;
+    padding-top: 62%;
+    overflow: hidden;
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 0;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.15);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 3;
+    }
+    .inner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      overflow: hidden;
+      img {
+        height: 102%;
+        width: auto;
+      }
+    }
+  }
+  .services-prev {
+    padding: 30px 20px;
+    @include index.minMedia(1100px) {
+      padding-left: 30px;
+    }
+    .content {
+      margin-bottom: 1rem;
+      height: auto;
+      @include index.minMedia(800px) {
+        min-height: 50px;
+      }
+      @include index.minMedia(1100px) {
+        margin-bottom: 1.5rem;
+        min-height: 50px;
+      }
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.4;
+
+      @include index.minMedia(550px) {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
