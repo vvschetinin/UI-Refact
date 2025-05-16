@@ -65,20 +65,39 @@
       margin-bottom: 1rem;
       height: auto;
       @include index.minMedia(800px) {
-        min-height: 50px;
+        min-height: 150px;
       }
       @include index.minMedia(1100px) {
         margin-bottom: 1.5rem;
-        min-height: 50px;
       }
     }
     p {
-      font-size: 18px;
-      line-height: 1.4;
-
+      font-size: 0.9rem;
+      line-height: 1.7;
       @include index.minMedia(550px) {
-        font-size: 0.9rem;
+        font-size: 16px;
       }
+    }
+  }
+}
+
+.services-list {
+  margin-bottom: 1.1rem;
+  padding-left: 25px;
+  @include index.minMedia(800px) {
+    margin-bottom: 1.4rem;
+  }
+  li {
+    position: relative;
+    &:before {
+      content: "";
+      display: block;
+      width: 15px;
+      height: 2px;
+      background-color: #18e591;
+      position: absolute;
+      left: -25px;
+      top: 15px;
     }
   }
 }

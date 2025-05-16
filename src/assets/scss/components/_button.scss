@@ -167,13 +167,21 @@
   }
 }
 
+.start-project-btn,
+.view-btn {
+  text-transform: uppercase;
+  font-size: 14px;
+  @include index.minMedia(1400px) {
+    font-size: 15px;
+  }
+}
+
 .start-project-btn {
   cursor: pointer;
   display: inline-block;
   background: 0 0;
   border: 0;
   font-family: "SourceSansPro", sans-serif;
-  font-size: 14px;
   font-weight: 500;
   word-spacing: 0.1rem;
   letter-spacing: 0.1px;
@@ -187,9 +195,6 @@
   border-radius: 2px;
   color: #fff;
   min-width: 205px;
-  @include index.minMedia(1400px) {
-    font-size: 15px;
-  }
   &:hover {
     color: #111;
     background: #18e591;
