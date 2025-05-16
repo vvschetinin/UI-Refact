@@ -124,17 +124,6 @@
       margin-top: 1rem;
     }
   }
-  .sectorname {
-    font-family: "SourceSansPro", sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #18e591;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    @include index.minMedia(800px) {
-      font-size: 1.25rem;
-    }
-  }
   p {
     line-height: 1.43;
     margin-bottom: 50px;
@@ -173,5 +162,17 @@
       width: 100%;
       line-height: 1;
     }
+  }
+}
+
+.sectorname {
+  font-family: "SourceSansPro", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #18e591;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  @include index.minMedia(800px) {
+    font-size: 1.25rem;
   }
 }
