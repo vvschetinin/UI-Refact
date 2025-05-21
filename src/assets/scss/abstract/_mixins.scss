@@ -14,6 +14,14 @@
   }
 }
 
+//  Горизонтальная ориентация
+
+@mixin mobileLandscape($max-height: 450px) {
+  @media screen and (max-height: $max-height) and (orientation: landscape) {
+    @content;
+  }
+}
+
 @mixin square($size: 1em) {
   width: $size;
   height: $size;
