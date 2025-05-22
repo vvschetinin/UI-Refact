@@ -71,13 +71,11 @@ if (startProjectForm) {
   startProjectButtons.forEach((el: HTMLElement) => {
     el.addEventListener("click", () => {
       startProjectForm.classList.add("is-active");
-      document.body.classList.add("no-scroll"); // Добавляем класс к body
     });
   });
 
   closeButton?.addEventListener("click", () => {
     startProjectForm.classList.remove("is-active");
-    document.body.classList.remove("no-scroll"); // Убираем класс у body
   });
 }
 

@@ -18,12 +18,9 @@ body {
   line-height: index.$base-line-height;
   background-color: var(--color-theme-body);
   color: var(--color-text-primary);
-  &.no-scroll {
-    &::-webkit-scrollbar {
-      width: 0;
-      opacity: 0;
-      transition: all 0.3s ease;
-    }
+  &::-webkit-scrollbar {
+    width: 0;
+    opacity: 0;
   }
 }
 

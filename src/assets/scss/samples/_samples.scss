@@ -85,3 +85,21 @@
     font-size: 12px;
   }
 }
+
+// Удаление полосы прокрутки
+body {
+  font-family: index.$text-font-stack;
+  font-size: clamp(17px, calc(18px + 20 * ((100vw - 600px) / 1080)), 20px);
+  font-weight: 300;
+  line-height: index.$base-line-height;
+  background-color: var(--color-theme-body);
+  color: var(--color-text-primary);
+  &.no-scroll {
+    // Класс добавляется к body через JS / TS
+    &::-webkit-scrollbar {
+      width: 0;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+  }
+}
