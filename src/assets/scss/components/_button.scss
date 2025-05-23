@@ -170,7 +170,7 @@
 .form-btn {
   padding: 15px 20px;
   text-transform: uppercase;
-  border: 3px solid rgba(0, 0, 0, 0.15);
+  border: 2px solid rgba(0, 0, 0, 0.15);
   color: #000;
   line-height: 1;
   transition: all 0.3s ease;
@@ -178,12 +178,12 @@
     padding: 17px 22px;
   }
   &:hover {
-    border: 3px solid rgba(0, 0, 0, 0.8);
+    border: 2px solid rgba(0, 0, 0, 0.8);
   }
 }
 
 .form-btn:disabled {
-  border: 3px solid rgba(0, 0, 0, 0.15);
+  border: 2px solid rgba(0, 0, 0, 0.15);
   cursor: default;
 }
 
