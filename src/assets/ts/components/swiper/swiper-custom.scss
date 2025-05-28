@@ -1,12 +1,44 @@
 @use "@scss/abstract/index";
 
-.swiper-slide {
+.service-slider {
+  .swiper-slide {
+    width: 100%;
+    min-height: 350px;
+    outline: 1px solid #fff;
+    background-color: #fff;
+    color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    &--active {
+      opacity: 1;
+    }
+  }
+  .toggle-autoplay {
+    margin-top: 50px;
+    padding: 10px 20px;
+    background: #fff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    &:hover {
+      background: #ddd;
+    }
+  }
+}
+
+.swiper-scrollbar-drag {
+  height: 100%;
   width: 100%;
-  min-height: 350px;
-  outline: 1px solid #fff;
+  position: relative;
+  background: var(--swiper-scrollbar-drag-bg-color, #18e591);
+  border-radius: var(--swiper-scrollbar-border-radius, 0);
+  left: 0;
+  top: 0;
+}
+.swiper-scrollbar {
   background-color: #fff;
-  color: #111;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }

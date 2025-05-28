@@ -1,36 +1,51 @@
 import Swiper from "swiper";
-import { Navigation, Pagination, Scrollbar } from "swiper/modules";
+import { Navigation, Pagination, Scrollbar, Autoplay, EffectFade } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import "swiper/css/effect-fade"; // Импорт стилей для Fade Effect
 import "./swiper-custom.scss";
 
-// Инициализация слайдера
-export const swiper = new Swiper(".s-service-slider .swiper", {
-  // Подключение модулей
-  modules: [Navigation, Pagination, Scrollbar],
-
-  // Базовые настройки слайдера
-  slidesPerView: 1, // Показывать один слайд за раз
-  spaceBetween: 20, // Отступ между слайдами (в пикселях)
-  loop: true, // Зацикливание слайдов (бесконечная прокрутка)
-
-  // Настройка навигации
+export const swiper = new Swiper(".service-slider", {
+  modules: [Navigation, Pagination, Scrollbar, Autoplay, EffectFade], // Добавляем EffectFade
+  slidesPerView: 1,
+  spaceBetween: 20,
+  loop: true,
+  speed: 1200, // Длительность перехода в миллисекундах (800ms = 0.8s)
+  effect: "fade", // Включаем эффект затухания
+  fadeEffect: {
+    crossFade: true, // Плавное затухание между слайдами
+  },
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-
-  // Настройка пагинации
   pagination: {
     el: ".swiper-pagination",
-    clickable: true, // Пагинация кликабельна
+    clickable: true,
   },
-
-  // Настройка скроллбара
   scrollbar: {
     el: ".swiper-scrollbar",
-    draggable: true, // Скроллбар можно перетаскивать
+    draggable: true,
+  },
+  autoplay: {
+    delay: 3500,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true,
   },
 });
+
+// Управление автопрокруткой
+const toggleButton = document.querySelector(".s-service-slider .toggle-autoplay");
+if (toggleButton) {
+  toggleButton.addEventListener("click", () => {
+    if (swiper.autoplay.running) {
+      swiper.autoplay.stop();
+      toggleButton.textContent = "Start Autoplay";
+    } else {
+      swiper.autoplay.start();
+      toggleButton.textContent = "Stop Autoplay";
+    }
+  });
+}
