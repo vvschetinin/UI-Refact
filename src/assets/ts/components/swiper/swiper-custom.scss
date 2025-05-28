@@ -1,0 +1,12 @@
+@use "@scss/abstract/index";
+
+.swiper-slide {
+  width: 100%;
+  min-height: 350px;
+  outline: 1px solid #fff;
+  background-color: #fff;
+  color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
