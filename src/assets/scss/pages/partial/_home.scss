@@ -5,7 +5,7 @@
   text-align: center;
   display: block;
   max-width: 800px;
-  padding-top: 30px;
+  padding-top: 45px;
   @include index.minMedia(800px) {
     padding-top: 50px;
   }

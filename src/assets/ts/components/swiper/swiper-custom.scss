@@ -3,16 +3,21 @@
 .service-slider {
   .swiper-slide {
     width: 100%;
-    min-height: 350px;
-    outline: 1px solid #fff;
-    background-color: #fff;
-    color: #111;
+    height: auto;
+    background: none;
     display: flex;
     justify-content: center;
     align-items: center;
     opacity: 0;
     &--active {
       opacity: 1;
+    }
+    .service-item {
+      max-width: 1100px;
+      height: auto;
+      min-height: 200px;
+      padding: 1rem 5rem;
+      padding-bottom: 3rem;
     }
   }
   .toggle-autoplay {
