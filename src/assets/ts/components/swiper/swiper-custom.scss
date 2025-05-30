@@ -16,8 +16,9 @@
       max-width: 1100px;
       height: auto;
       min-height: 200px;
-      padding: 1rem 5rem;
-      padding-bottom: 3rem;
+      padding: 2.5rem 5rem;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 5px;
     }
   }
   .toggle-autoplay {
@@ -46,4 +47,38 @@
 }
 .swiper-scrollbar {
   background-color: #fff;
+}
+
+/* Стили для неактивных точек */
+.s-service-listing .swiper-pagination-bullet {
+  width: 10px; /* Размер точки */
+  height: 10px;
+  background: #fff; /* Серый цвет для неактивных точек */
+  opacity: 0.5; /* Полупрозрачность */
+  border-radius: 50%; /* Круглая форма */
+  margin: 0 8px; /* Отступ между точками */
+  transition: all 0.3s ease; /* Плавная анимация */
+  &:hover {
+    opacity: 0.8; /* Лёгкое подсвечивание при наведении */
+    cursor: pointer; /* Курсор указывает на кликабельность */
+  }
+}
+
+/* Стили для активной точки */
+.s-service-listing .swiper-pagination-bullet-active {
+  background: #007aff; /* Белый цвет для активной точки */
+  opacity: 1; /* Полная непрозрачность */
+  transform: scale(1.2); /* Увеличение активной точки */
+}
+
+.service-listing-pagination {
+  &.swiper-pagination {
+    position: relative;
+    display: block;
+    margin-top: 1rem;
+  }
+}
+
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 8px);
 }
