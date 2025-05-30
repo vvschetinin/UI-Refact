@@ -29,11 +29,11 @@ export const swiper = new Swiper(".service-slider", {
     el: ".swiper-scrollbar",
     draggable: true,
   },
-  // autoplay: {
-  //   delay: 3500,
-  //   disableOnInteraction: false,
-  //   pauseOnMouseEnter: true,
-  // },
+  autoplay: {
+    delay: 3500,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true,
+  },
 });
 
 // Управление автопрокруткой
