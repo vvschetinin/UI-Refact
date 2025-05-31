@@ -1,0 +1,54 @@
+@use "@scss/abstract/index";
+
+.faq-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  li {
+    position: relative;
+    border-bottom: 1px solid #e0e0e0;
+    & + li {
+      margin-top: 1.5rem;
+    }
+  }
+}
+
+.faq-question {
+  font-size: 1.2rem;
+  padding: 15px 20px;
+  margin: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: relative;
+
+  &::after {
+    content: "▼";
+    position: absolute;
+    right: 20px;
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+  }
+  &.active::after {
+    transform: rotate(180deg); /* Поворот стрелки при открытии */
+  }
+}
+
+.faq-answer {
+  opacity: 0; /* Скрываем ответы по умолчанию */
+  padding: 0 20px 15px;
+  padding-bottom: 25px;
+  font-size: 1rem;
+  line-height: 1.5;
+  height: auto;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  &.active {
+    display: flex; /* Показываем активный ответ */
+    opacity: 1;
+    max-height: 200px; /* Укажи примерную высоту или используй JS для динамики */
+  }
+}
+
+// ============================================

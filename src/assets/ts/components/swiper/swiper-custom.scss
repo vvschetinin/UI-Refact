@@ -3,7 +3,7 @@
 .service-slider {
   .swiper-slide {
     width: 100%;
-    height: auto;
+    height: auto !important; /* Отменяем автоматическую высоту Swiper */
     background: none;
     display: flex;
     justify-content: center;
@@ -14,11 +14,15 @@
     }
     .service-item {
       max-width: 1100px;
-      height: auto;
-      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      height: 100%; /* Растягиваем на всю высоту слайда */
       padding: 2.5rem 5rem;
       border: 1px solid rgba(255, 255, 255, 0.3);
       border-radius: 5px;
+      p {
+        flex-grow: 1; /* Текст занимает всё доступное пространство */
+      }
     }
   }
   .toggle-autoplay {
@@ -50,25 +54,25 @@
 }
 
 /* Стили для неактивных точек */
-.s-service-listing .swiper-pagination-bullet {
-  width: 10px; /* Размер точки */
-  height: 10px;
-  background: #fff; /* Серый цвет для неактивных точек */
-  opacity: 0.5; /* Полупрозрачность */
-  border-radius: 50%; /* Круглая форма */
-  margin: 0 8px; /* Отступ между точками */
-  transition: all 0.3s ease; /* Плавная анимация */
-  &:hover {
-    opacity: 0.8; /* Лёгкое подсвечивание при наведении */
-    cursor: pointer; /* Курсор указывает на кликабельность */
+.service-listing-pagination {
+  .swiper-pagination-bullet {
+    width: 10px; /* Размер точки */
+    height: 10px;
+    background: #fff; /* Серый цвет для неактивных точек */
+    opacity: 0.5; /* Полупрозрачность */
+    border-radius: 50%; /* Круглая форма */
+    margin: 0 8px !important;
+    transition: all 0.3s ease; /* Плавная анимация */
+    &:hover {
+      opacity: 0.8; /* Лёгкое подсвечивание при наведении */
+      cursor: pointer; /* Курсор указывает на кликабельность */
+    }
+    &-active {
+      background: #007aff; /* Белый цвет для активной точки */
+      opacity: 1; /* Полная непрозрачность */
+      transform: scale(1.2); /* Увеличение активной точки */
+    }
   }
-}
-
-/* Стили для активной точки */
-.s-service-listing .swiper-pagination-bullet-active {
-  background: #007aff; /* Белый цвет для активной точки */
-  opacity: 1; /* Полная непрозрачность */
-  transform: scale(1.2); /* Увеличение активной точки */
 }
 
 .service-listing-pagination {
@@ -77,8 +81,4 @@
     display: block;
     margin-top: 1rem;
   }
-}
-
-.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
-  margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 8px);
 }
