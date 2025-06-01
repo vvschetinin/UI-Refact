@@ -8,8 +8,12 @@
   li {
     position: relative;
     border-bottom: 1px solid #e0e0e0;
+    &:first-child {
+      border-top: 1px solid #e0e0e0;
+      padding-top: 0.85rem;
+    }
     & + li {
-      margin-top: 1.5rem;
+      margin-top: 0.7rem;
     }
   }
 }
@@ -17,11 +21,12 @@
 .faq-question {
   font-size: 1.2rem;
   padding: 15px 20px;
+  padding-bottom: 1.2rem;
   margin: 0;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
   position: relative;
-
   &::after {
     content: "▼";
     position: absolute;
@@ -35,19 +40,16 @@
 }
 
 .faq-answer {
-  opacity: 0; /* Скрываем ответы по умолчанию */
-  padding: 0 20px 15px;
-  padding-bottom: 25px;
+  max-height: 0;
+  overflow: hidden; /* Скрываем содержимое при закрытии */
+  padding: 0 20px; /* Боковые отступы */
   font-size: 1rem;
   line-height: 1.5;
-  height: auto;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease;
+  opacity: 0; /* Прозрачность для анимации */
+  transition: max-height 0.35s ease, padding-bottom 0.35s ease, opacity 0.35s ease;
   &.active {
-    display: flex; /* Показываем активный ответ */
+    margin-bottom: 1.5rem; /* Отступ снизу при открытии */
     opacity: 1;
-    max-height: 200px; /* Укажи примерную высоту или используй JS для динамики */
   }
 }
 

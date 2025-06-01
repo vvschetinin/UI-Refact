@@ -109,3 +109,41 @@ if (formButton && formCheck) {
 } else {
   console.error("Один из элементов формы не найден");
 }
+
+// ================== Accordeon FAQ ===================
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Получаем все вопросы с типом HTMLElement
+  const questions: NodeListOf<HTMLElement> = document.querySelectorAll(".faq-question");
+
+  questions.forEach((question: HTMLElement) => {
+    question.addEventListener("click", () => {
+      // Находим следующий элемент (ответ) с типом HTMLElement или null
+      const answer: HTMLElement | null = question.nextElementSibling as HTMLElement | null;
+      const isActive: boolean = question.classList.contains("active");
+
+      if (isActive) {
+        question.classList.remove("active");
+        if (answer) {
+          answer.classList.remove("active");
+          answer.style.maxHeight = "0"; // Закрываем с анимацией
+        }
+      } else {
+        question.classList.add("active");
+        if (answer) {
+          answer.classList.add("active");
+          // Устанавливаем max-height на основе scrollHeight с запасом 10px
+          answer.style.maxHeight = `${answer.scrollHeight + 10}px`;
+        }
+      }
+    });
+
+    // Поддержка клавиатуры (Enter или Пробел)
+    question.addEventListener("keydown", (e: KeyboardEvent) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        question.click();
+      }
+    });
+  });
+});
