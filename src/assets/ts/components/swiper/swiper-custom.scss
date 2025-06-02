@@ -17,9 +17,15 @@
       display: flex;
       flex-direction: column;
       height: 100%; /* Растягиваем на всю высоту слайда */
-      padding: 2.5rem 5rem;
+      padding: 2.5rem 2rem;
       border: 1px solid rgba(255, 255, 255, 0.3);
       border-radius: 5px;
+      @include index.minMedia(550px) {
+        padding: 2.5rem 3rem;
+      }
+      @include index.minMedia(800px) {
+        padding: 2.5rem 5rem;
+      }
       p {
         flex-grow: 1; /* Текст занимает всё доступное пространство */
       }
@@ -81,4 +87,62 @@
     display: block;
     margin-top: 1rem;
   }
+}
+
+// ============ ARROWS ==================
+
+/* Стили для навигационных кнопок */
+.service-slider .swiper-button-prev,
+.service-slider .swiper-button-next {
+  width: 40px; /* Размер кнопки */
+  height: 40px;
+  background: rgba(0, 0, 0, 0.5); /* Полупрозрачный тёмный фон */
+  border-radius: 50%; /* Круглая форма */
+  color: #fff; /* Белый цвет стрелок */
+  display: flex; /* Центрирование иконки */
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease; /* Плавная анимация */
+  margin-top: -20px; /* Центрирование по вертикали относительно слайдера */
+}
+
+/* Позиционирование кнопок */
+.service-slider .swiper-button-prev {
+  left: -15px; /* Отступ от левого края */
+  @include index.minMedia(550px) {
+    left: 0; /* Отступ от левого края */
+  }
+  @include index.minMedia(800px) {
+    left: 10px; /* Отступ от левого края */
+  }
+}
+
+.service-slider .swiper-button-next {
+  right: -15px; /* Отступ от правого края */
+  @include index.minMedia(550px) {
+    right: 0; /* Отступ от правого края */
+  }
+  @include index.minMedia(800px) {
+    right: 10px; /* Отступ от правого края */
+  }
+}
+
+/* Стили для иконок стрелок */
+.service-slider .swiper-button-prev::after,
+.service-slider .swiper-button-next::after {
+  font-size: 18px; /* Размер иконки стрелки */
+}
+
+/* Эффект при наведении */
+.service-slider .swiper-button-prev:hover,
+.service-slider .swiper-button-next:hover {
+  background: rgba(0, 0, 0, 0.8); /* Более тёмный фон при наведении */
+  transform: scale(1.1); /* Лёгкое увеличение */
+}
+
+/* Отключённые кнопки (если loop: false) */
+.service-slider .swiper-button-prev.swiper-button-disabled,
+.service-slider .swiper-button-next.swiper-button-disabled {
+  opacity: 0.3; /* Полупрозрачность для неактивных кнопок */
+  cursor: not-allowed;
 }

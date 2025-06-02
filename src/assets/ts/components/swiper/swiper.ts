@@ -37,7 +37,7 @@ export const swiper = new Swiper(".service-slider", {
 });
 
 // Управление автопрокруткой
-const toggleButton = document.querySelector(".s-service-slider .toggle-autoplay");
+const toggleButton = document.querySelector(".service-slider .toggle-autoplay");
 if (toggleButton) {
   toggleButton.addEventListener("click", () => {
     if (swiper.autoplay.running) {
