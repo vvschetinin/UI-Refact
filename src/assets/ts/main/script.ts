@@ -168,7 +168,7 @@ const options: IntersectionObserverInit = {
 // Создаём IntersectionObserver
 const observer: IntersectionObserver = new IntersectionObserver(onEntry, options);
 // Находим все элементы с классом .element-animation
-const elements: NodeListOf<Element> = document.querySelectorAll(".element-animation");
+const elements: NodeListOf<Element> = document.querySelectorAll(".element-animation-up");
 // Начинаем наблюдать за каждым элементом
 elements.forEach((element: Element) => {
   observer.observe(element);

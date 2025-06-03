@@ -28,7 +28,10 @@ section,
   }
   &--hero {
     @include index.minMedia(800px) {
-      padding-top: 4rem;
+      padding-top: 2rem;
+    }
+    @include index.minMedia(1400px) {
+      padding-top: 0;
     }
   }
 }

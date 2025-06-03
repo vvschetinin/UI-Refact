@@ -14,7 +14,7 @@
 
 // Анимация всплытия блока
 
-.element-animation {
+.element-animation-up {
   opacity: 0;
   transform: translateY(30px);
   &.element-show {
