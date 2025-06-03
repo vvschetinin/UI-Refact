@@ -61,6 +61,11 @@
 
 /* Стили для неактивных точек */
 .service-listing-pagination {
+  &.swiper-pagination {
+    position: relative;
+    display: block;
+    margin-top: 1rem;
+  }
   .swiper-pagination-bullet {
     width: 10px; /* Размер точки */
     height: 10px;
@@ -78,14 +83,6 @@
       opacity: 1; /* Полная непрозрачность */
       transform: scale(1.2); /* Увеличение активной точки */
     }
-  }
-}
-
-.service-listing-pagination {
-  &.swiper-pagination {
-    position: relative;
-    display: block;
-    margin-top: 1rem;
   }
 }
 

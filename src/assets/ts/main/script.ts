@@ -147,3 +147,29 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+// Анимация всплытие блока
+
+// Callback для IntersectionObserver
+const onEntry = (entries: IntersectionObserverEntry[]): void => {
+  entries.forEach((entry: IntersectionObserverEntry) => {
+    if (entry.target && entry.isIntersecting) {
+      // Добавляем класс анимации
+      entry.target.classList.add("element-show");
+      // Прекращаем наблюдение за этим элементом
+      observer.unobserve(entry.target);
+    }
+  });
+};
+// Параметры наблюдения
+const options: IntersectionObserverInit = {
+  threshold: 0.35, // Элемент считается видимым, когда 35% в зоне видимости
+};
+// Создаём IntersectionObserver
+const observer: IntersectionObserver = new IntersectionObserver(onEntry, options);
+// Находим все элементы с классом .element-animation
+const elements: NodeListOf<Element> = document.querySelectorAll(".element-animation");
+// Начинаем наблюдать за каждым элементом
+elements.forEach((element: Element) => {
+  observer.observe(element);
+});
