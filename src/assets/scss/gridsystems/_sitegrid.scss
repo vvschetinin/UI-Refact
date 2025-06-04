@@ -119,9 +119,12 @@ $gutter: 30px;
   position: relative;
   width: 100%;
   max-width: 120rem;
-  padding: 0 1.25rem;
+  padding: 0 1rem;
   margin: 0 auto;
   z-index: 1;
+  @include index.minMedia(550px) {
+    padding: 0 1.25rem;
+  }
   @include index.minMedia(800px) {
     padding: 0 3.75rem;
   }
