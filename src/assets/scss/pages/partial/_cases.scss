@@ -35,10 +35,10 @@
 }
 
 .grid-item {
-  float: left;
+  display: flex; // Вместо float
   position: relative;
-  transform: scale(1);
   width: 100%;
+  transform: scale(1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   &:before {
     content: "";
@@ -85,15 +85,11 @@
     .grid-item-image {
       filter: grayscale(0);
       @include index.minMedia(550px) {
-        filter: grayscale(100);
+        filter: grayscale(100%);
       }
     }
   }
-  &:active {
-    .grid-item-image {
-      filter: grayscale(0);
-    }
-  }
+  &:active,
   &:focus {
     .grid-item-image {
       filter: grayscale(0);
