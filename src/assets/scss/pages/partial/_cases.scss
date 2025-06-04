@@ -38,14 +38,16 @@
   display: flex; // Вместо float
   position: relative;
   width: 100%;
+  will-change: transform;
+  backface-visibility: hidden;
   transform: scale(1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   &:before {
     content: "";
     display: block;
+    aspect-ratio: 1 / 1; // Более современная замена padding-top: 100%
     position: relative;
     width: 100%;
-    padding-top: 100%;
   }
   &.work-item {
     text-align: center;
