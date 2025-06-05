@@ -32,12 +32,15 @@
   @include index.minMedia(800px) {
     justify-content: flex-start;
   }
+  button,
+  .view-btn {
+    min-width: 240px;
+  }
   .btn {
     white-space: nowrap;
     margin: 10px 0;
     margin: 0.625rem 0;
     width: 100%;
-    min-width: none;
     font-size: 18px;
     @include index.minMedia(550px) {
       width: auto;
@@ -162,7 +165,7 @@
   border: 2px solid rgba(255, 255, 255, 0.35);
   color: #fff;
   @include index.minMedia(550px) {
-    border: 2px solid rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.25);
   }
   &:hover {
     border: 2px solid rgba(255, 255, 255, 1);
