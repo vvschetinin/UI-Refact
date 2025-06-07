@@ -173,3 +173,52 @@ const elements: NodeListOf<Element> = document.querySelectorAll(".element-animat
 elements.forEach((element: Element) => {
   observer.observe(element);
 });
+
+// ================ Выравнивание слайдов ===========
+
+function debounce<T extends (...args: any[]) => any>(fn: T, delay: number): (...args: Parameters<T>) => void {
+  let timeoutId: ReturnType<typeof setTimeout> | null = null;
+
+  return (...args: Parameters<T>) => {
+    if (timeoutId) clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      fn(...args);
+    }, delay);
+  };
+}
+
+function equalizeServiceItemHeights(): void {
+  const items = document.querySelectorAll<HTMLElement>(".service-item");
+  if (!items.length) return;
+
+  let maxHeight = 0;
+
+  // Временно показываем все элементы для корректного измерения
+  items.forEach((item: HTMLElement) => {
+    item.style.position = "absolute";
+    item.style.visibility = "hidden";
+    item.style.display = "block";
+    item.style.height = "";
+    item.style.minHeight = "";
+  });
+
+  // Вычисляем максимальную высоту
+  items.forEach((item: HTMLElement) => {
+    const contentHeight = item.scrollHeight;
+    if (contentHeight > maxHeight) maxHeight = contentHeight;
+  });
+
+  // Восстанавливаем стили и задаём min-height всем элементам
+  items.forEach((item: HTMLElement) => {
+    item.style.position = "";
+    item.style.visibility = "";
+    item.style.display = "";
+    item.style.minHeight = `${maxHeight}px`;
+  });
+}
+
+// Инициализация
+document.addEventListener("DOMContentLoaded", () => {
+  equalizeServiceItemHeights();
+  window.addEventListener("resize", debounce(equalizeServiceItemHeights, 100));
+});
