@@ -1,16 +1,33 @@
-import Inputmask from "inputmask";
+document.addEventListener("DOMContentLoaded", () => {
+  const eventCallback = (e: Event) => {
+    const target = e.target as HTMLInputElement;
+    const clearVal = target.dataset.phoneClear;
+    const pattern = target.dataset.phonePattern;
+    const matrixDef = "+7(___) ___-__-__";
+    const matrix = pattern ? pattern : matrixDef;
+    let i = 0;
+    const def = matrix.replace(/\D/g, "");
+    let val = target.value.replace(/\D/g, "");
 
-document.addEventListener("DOMContentLoaded", function () {
-  const phoneInputs = document.querySelectorAll<HTMLInputElement>("[data-mask='phone']");
+    if (clearVal !== "false" && e.type === "blur") {
+      const match = matrix.match(/([\_\d])/g);
+      if (match && val.length < match.length) {
+        target.value = "";
+        return;
+      }
+    }
 
-  phoneInputs.forEach((input) => {
-    const mask = input.dataset.phonePattern || "+7 (999) 999-99-99";
-    const im = new Inputmask({
-      mask: mask,
-      clearIncomplete: input.dataset.phoneClear === "false" ? false : true,
-      showMaskOnHover: false,
-      autoUnmask: true,
+    if (def.length >= val.length) val = def;
+
+    target.value = matrix.replace(/./g, (a: string) => {
+      return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a;
     });
-    im.mask(input);
+  };
+
+  const phoneInputs = document.querySelectorAll<HTMLInputElement>("[data-phone-pattern]");
+  phoneInputs.forEach((elem) => {
+    ["input", "blur", "focus"].forEach((ev) => {
+      elem.addEventListener(ev, eventCallback);
+    });
   });
 });

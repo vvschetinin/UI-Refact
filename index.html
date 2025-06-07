@@ -320,9 +320,9 @@
           <div class="container--middle">
             <div class="row content-block element-animation-up">
               <div class="col-100">
-                <div class="swiper service-slider">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
+                <div class="myslider service-slider">
+                  <div class="myslider-wrapper">
+                    <div class="slider-item">
                       <article class="service-item">
                         <h3 class="h3-title lh-1 deco-line mb-15">Контент-маркетинг</h3>
                         <p>
@@ -331,7 +331,7 @@
                         </p>
                       </article>
                     </div>
-                    <div class="swiper-slide">
+                    <div class="slider-item">
                       <article class="service-item">
                         <h3 class="h3-title lh-1 deco-line mb-15">AI Чат-боты</h3>
                         <p>
@@ -340,7 +340,7 @@
                         </p>
                       </article>
                     </div>
-                    <div class="swiper-slide">
+                    <div class="slider-item">
                       <article class="service-item">
                         <h3 class="h3-title lh-1 deco-line mb-15">AI-ассистенты</h3>
                         <p>
@@ -349,7 +349,7 @@
                         </p>
                       </article>
                     </div>
-                    <div class="swiper-slide">
+                    <div class="slider-item">
                       <article class="service-item">
                         <h3 class="h3-title lh-1 deco-line mb-15">SEO-продвижение</h3>
                         <p>
@@ -358,7 +358,7 @@
                         </p>
                       </article>
                     </div>
-                    <div class="swiper-slide">
+                    <div class="slider-item">
                       <article class="service-item">
                         <h3 class="h3-title lh-1 deco-line mb-15">Дополнительные услуги</h3>
                         <p>
@@ -369,10 +369,11 @@
                     </div>
                   </div>
 
-                  <div class="swiper-button-prev"></div>
-                  <div class="swiper-button-next"></div>
+                  <div class="slider-button-prev"></div>
+                  <div class="slider-button-next"></div>
+                  <div class="slider-pagination"></div>
                 </div>
-                <div class="service-listing-pagination swiper-pagination"></div>
+
                 <!-- Блок кнопок -->
                 <div class="button-wrap flex justify-center mt-2 mt-3--lg">
                   <button class="start-project-btn display-inline-block js-startproject">Получить консультацию</button>
@@ -623,17 +624,7 @@
                     </li>
                     <li>
                       <div class="input-container">
-                        <input
-                          name="phone"
-                          type="tel"
-                          data-mask="phone"
-                          data-phone-pattern="+7 (999) 999-99-99"
-                          data-phone-clear="true"
-                          value=""
-                          class="large"
-                          required
-                          placeholder="Номер телефона *"
-                        />
+                        <input name="phone" type="tel" data-phone-pattern value="" class="large" required placeholder="Номер телефона *" />
                       </div>
                     </li>
                     <li>

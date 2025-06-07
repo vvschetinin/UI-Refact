@@ -33,8 +33,5 @@
     "sass-reset": "^1.0.4",
     "typescript": "~5.6.2",
     "vite": "^6.0.5"
-  },
-  "dependencies": {
-    "inputmask": "^5.0.9"
   }
 }
