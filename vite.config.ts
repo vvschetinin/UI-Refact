@@ -27,8 +27,6 @@ export default defineConfig(({ mode }) => ({
         seo: path.resolve(root, "pages/services/seo/index.html"),
         // ================================================================
         err404: path.resolve(root, "pages/error/index.html"),
-        // ======================== Demo sites ========================
-        demosample: path.resolve(root, "demo/sample/index.html"),
       },
     },
   },

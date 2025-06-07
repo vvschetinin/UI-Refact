@@ -28,6 +28,9 @@
         margin-left: 1.25rem;
       }
     }
+    span {
+      text-transform: uppercase;
+    }
   }
   a:not([class]) {
     position: relative;
@@ -58,6 +61,15 @@
         @include index.minMedia(1400px) {
           width: calc(100% - 1.6vw);
         }
+      }
+    }
+  }
+  .active.menu-item {
+    position: relative;
+    color: #18e591;
+    a:hover {
+      &::after {
+        width: 0;
       }
     }
   }
