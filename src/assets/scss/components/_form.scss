@@ -118,7 +118,7 @@
       color: #012456;
       font-size: 22px;
       font-weight: 600;
-      padding: 0 0.5rem;
+      padding: 0 1rem;
       @include index.minMedia(400px) {
         padding: 0 1rem;
       }

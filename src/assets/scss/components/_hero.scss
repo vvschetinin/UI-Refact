@@ -13,9 +13,10 @@
 }
 
 .hero--large {
-  height: 100vh;
-  max-height: 850px;
+  height: auto;
+  padding: 12rem 0 10rem 0;
   @include index.minMedia(550px) {
+    padding: 0;
     height: 100vh;
     max-height: 900px;
   }

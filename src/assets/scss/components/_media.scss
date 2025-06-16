@@ -35,5 +35,9 @@
     background-size: cover;
     object-fit: cover;
     background-position: 50%;
+    display: none;
+    @include index.minMedia(800px) {
+      display: block;
+    }
   }
 }

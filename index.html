@@ -149,8 +149,8 @@
 
       <main class="site-content">
         <section class="hero hero--large bg-hero">
-          <figure class="hero-media">
-            <video class="hero-video" preload="auto" poster="/assets/images/hero/main-hero.jpg" loop muted playsinline autoplay controls>
+          <figure class="hero-media bg--cover" style="background-image: url(/assets/images/hero/main-hero.webp)">
+            <video class="hero-video bg--cover" preload="auto" poster="/assets/images/hero/main-hero.webp" loop muted playsinline autoplay controls>
               <source src="/assets/video/careers.mp4" type="video/mp4" />
             </video>
           </figure>
@@ -624,7 +624,7 @@
                     </li>
                     <li>
                       <div class="input-container">
-                        <input name="phone" type="tel" data-phone-pattern="+7 (___) ___-__-__" value="" class="large" required placeholder="Номер телефона *" />
+                        <input name="phone" type="tel" data-phone-pattern value="" class="large" required placeholder="Номер телефона *" />
                       </div>
                     </li>
                     <li>
@@ -645,7 +645,6 @@
                   </div>
                 </div>
                 <div class="form-footer mt-1">
-                  <div id="answer-overlay"></div>
                   <button class="form-btn" name="formbutton" id="form-submit-button" disabled="true">Отправить</button>
                   <input type="hidden" class="form-hidden" name="project_name" value="Сайт Владлена Щетинина" />
                   <input type="hidden" class="form-hidden" name="form_subject" value="Сообщение с модальной формы обратной связи" />
