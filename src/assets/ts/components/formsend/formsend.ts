@@ -24,7 +24,7 @@ if (form) {
       if (successSpan && successDiv) {
         successSpan.innerHTML = result;
         successDiv.classList.add("success-mail");
-        successDiv.style.display = "block";
+        successDiv.style.display = "flex";
 
         setTimeout(() => {
           successDiv.classList.remove("success-mail");
