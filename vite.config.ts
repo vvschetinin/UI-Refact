@@ -22,9 +22,9 @@ export default defineConfig(({ mode }) => ({
         contacts: path.resolve(root, "pages/contacts/index.html"),
         // ======================== inner services ========================
         aibots: path.resolve(root, "pages/services/aibots/index.html"),
-        aihelpers: path.resolve(root, "pages/services/aihelpers/index.html"),
+        optimization: path.resolve(root, "pages/services/optimization/index.html"),
         content: path.resolve(root, "pages/services/content/index.html"),
-        seo: path.resolve(root, "pages/services/seo/index.html"),
+        castom: path.resolve(root, "pages/services/castom/index.html"),
         // ================================================================
         err404: path.resolve(root, "pages/error/index.html"),
       },

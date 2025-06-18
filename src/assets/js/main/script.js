@@ -6,6 +6,8 @@ document.addEventListener("selectstart", function (e) {
   e.preventDefault();
 });
 
+// Маска телефона для формы
+
 document.addEventListener("DOMContentLoaded", function () {
   let eventCalllback = function (e) {
     let el = e.target,
