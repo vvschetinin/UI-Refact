@@ -37,20 +37,18 @@ window.addEventListener("scroll", (): void => {
 
 const videoElements = document.querySelectorAll<HTMLVideoElement>(".hero-video");
 
-if (videoElements.length === 0) {
-  console.warn("Видео с классом .hero-video не найдено.");
-} else {
+if (videoElements.length > 0) {
   const handleResize = (): void => {
-    const isMobile = window.innerWidth <= 550;
+    const isMobile: boolean = window.innerWidth <= 550;
 
-    videoElements.forEach((video) => {
+    videoElements.forEach((video: HTMLVideoElement) => {
       if (!video) return;
 
       if (isMobile) {
         video.pause();
       } else {
         video.play().catch((error: Error) => {
-          console.log("Автовоспроизведение заблокировано:", error.message);
+          console.error("Автовоспроизведение заблокировано:", error.message);
         });
       }
     });

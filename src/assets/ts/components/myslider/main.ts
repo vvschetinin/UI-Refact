@@ -2,11 +2,13 @@
 import { Slider } from "./myslider";
 
 document.addEventListener("DOMContentLoaded", () => {
-  // @ts-ignore
-  const slider = new Slider(".myslider", {
-    autoplay: true,
-    autoplaySpeed: 4500,
-    loop: true,
-    effect: "fade",
-  });
+  // Проверяем, существует ли элемент .myslider на странице
+  if (document.querySelector(".myslider")) {
+    new Slider(".myslider", {
+      autoplay: true,
+      autoplaySpeed: 4000,
+      loop: true,
+      effect: "fade",
+    });
+  }
 });
