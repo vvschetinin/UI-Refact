@@ -146,31 +146,42 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Анимация всплытие блока
+// ============ Анимация всплытия блока ================
 
 // Callback для IntersectionObserver
 const onEntry = (entries: IntersectionObserverEntry[]): void => {
   entries.forEach((entry: IntersectionObserverEntry) => {
     if (entry.target && entry.isIntersecting) {
-      // Добавляем класс анимации
       entry.target.classList.add("element-show");
-      // Прекращаем наблюдение за этим элементом
-      observer.unobserve(entry.target);
+      observer.unobserve(entry.target); // ✅ observer уже существует
     }
   });
 };
-// Параметры наблюдения
-const options: IntersectionObserverInit = {
-  threshold: 0.25, // Элемент считается видимым, когда 25% в зоне видимости
-};
-// Создаём IntersectionObserver
-const observer: IntersectionObserver = new IntersectionObserver(onEntry, options);
-// Находим все элементы с классом .element-animation
-const elements: NodeListOf<Element> = document.querySelectorAll(".element-animation-up");
-// Начинаем наблюдать за каждым элементом
-elements.forEach((element: Element) => {
-  observer.observe(element);
-});
+let observer: IntersectionObserver; // Объявляем переменную заранее
+function initObserver() {
+  // Удаляем предыдущего observer, если он уже создан
+  if (observer) {
+    observer.disconnect();
+  }
+  // Определяем rootMargin в зависимости от ширины экрана
+  const rootMarginValue = window.innerWidth < 800 ? "0px 0px -25px 0px" : "0px 0px -40px 0px";
+  // Параметры наблюдения
+  const options: IntersectionObserverInit = {
+    rootMargin: rootMarginValue,
+    threshold: 0,
+  };
+  // Создаём новый IntersectionObserver
+  observer = new IntersectionObserver(onEntry, options);
+  // Находим элементы и начинаем наблюдать за ними
+  const elements: NodeListOf<Element> = document.querySelectorAll(".element-animation-up");
+  elements.forEach((element: Element) => {
+    observer.observe(element);
+  });
+}
+// Инициализация при загрузке страницы
+initObserver();
+// Пересоздание observer при изменении размера окна
+window.addEventListener("resize", initObserver);
 
 // ================ Выравнивание слайдов ===========
 
